@@ -28,12 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SettingsTonButton = new System.Windows.Forms.Button();
+            this.SettingsTonSlider = new System.Windows.Forms.TrackBar();
+            ((System.ComponentModel.ISupportInitialize)(this.SettingsTonSlider)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // SettingsTonButton
+            // 
+            this.SettingsTonButton.Location = new System.Drawing.Point(168, 151);
+            this.SettingsTonButton.Name = "SettingsTonButton";
+            this.SettingsTonButton.Size = new System.Drawing.Size(94, 29);
+            this.SettingsTonButton.TabIndex = 0;
+            this.SettingsTonButton.Text = "button1";
+            this.SettingsTonButton.UseVisualStyleBackColor = true;
+            // 
+            // SettingsTonSlider
+            // 
+            this.SettingsTonSlider.Location = new System.Drawing.Point(331, 151);
+            this.SettingsTonSlider.Name = "SettingsTonSlider";
+            this.SettingsTonSlider.Size = new System.Drawing.Size(130, 56);
+            this.SettingsTonSlider.TabIndex = 1;
+            // 
+            // Settings
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1246, 571);
+            this.Controls.Add(this.SettingsTonSlider);
+            this.Controls.Add(this.SettingsTonButton);
+            this.Name = "Settings";
             this.Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)(this.SettingsTonSlider)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private Button SettingsTonButton;
+        private TrackBar SettingsTonSlider;
     }
 }
