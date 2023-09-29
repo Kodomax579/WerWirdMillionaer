@@ -9,7 +9,12 @@ namespace Spiel
 
         private void Form1_Load(object sender, EventArgs e)
           {
-            //was geht
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
