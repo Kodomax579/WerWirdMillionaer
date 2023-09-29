@@ -46,6 +46,7 @@
             button1.TabIndex = 0;
             button1.Text = "Einstellung";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -110,8 +111,9 @@
             button3.TabIndex = 8;
             button3.Text = "Regristrieren";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
-            // Form1
+            // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -125,7 +127,7 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Form1";
+            Name = "Login";
             Text = "Form1";
             Load += Form1_Load_1;
             ResumeLayout(false);
