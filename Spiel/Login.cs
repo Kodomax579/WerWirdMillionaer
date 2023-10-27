@@ -25,14 +25,14 @@ namespace Spiel
         {
             Regristrieren reg = new Regristrieren();
             reg.Show();
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Settings set = new Settings();
             set.Show();
-           
+
         }
     }
 }
