@@ -12,34 +12,45 @@ namespace Spiel
 
     class MySQL
     {
-        public void mysql()
+        private MySqlConnection conn;
+
+        public MySQL(string server, string database, string user, string password, string port, string sslM)
         {
-            string server = "localhost";
-            string database = "WWM";
-            string username = "root";
-            string password = "";
+            string connString =
+                String.Format("server={0};port={1};user id={2}; password={3}; database={4}; SslMode={5}",
+                              server, port, user, password, database, sslM);
 
-            string constring = "SERVER=" + server + ";" +"DATABASE="+database+";"+"UID="+username+";"+"PASSWORD="+password+";";
-            MySqlConnection conn = new MySqlConnection(constring);
-            Console.Write("drin");
-            conn.Open();
+            conn = new MySqlConnection(connString);
 
-            string query = "SELECT * FROM spieler";
-
-       
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                Console.WriteLine(reader.GetString(0));
-                Console.WriteLine(reader.GetString(1));
-                Console.WriteLine(reader.GetString(2));
-                Console.WriteLine(reader.GetString(3));
-                Console.WriteLine(reader.GetString(4));
+                conn.Open();
+
+
             }
-        }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         
+        
+        }
+        public bool Login(string username, string password)
+        {
+            string query = "SELECT * FROM spieler WHERE username = @username AND password = @password";
+            MySqlCommand mySqlCommand = conn.CreateCommand();
+            mySqlCommand.CommandText = query;
+
+            // Create and add parameters to the query
+            mySqlCommand.Parameters.AddWithValue("@username", username);
+            mySqlCommand.Parameters.AddWithValue("@password", password);
+
+            MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+
+            return mySqlDataReader.HasRows;
+        }
+
 
     }
+
 }

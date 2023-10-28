@@ -14,7 +14,9 @@ namespace Spiel
     {
         public Startseite()
         {
+
             InitializeComponent();
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,6 +33,16 @@ namespace Spiel
         {
             Settings set = new Settings();
             set.Show();
+        }
+
+        private void Startseite_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
