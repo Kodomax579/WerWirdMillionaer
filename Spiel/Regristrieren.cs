@@ -16,5 +16,18 @@ namespace Spiel
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Spieler spieler = new Spieler();
+            
+            
+            if(spieler.SignUP(name, nachname, username, Email, passwort))
+            {
+                Login lg = new Login();
+                lg.Show();
+                this.Close();
+            }
+        }
     }
 }
