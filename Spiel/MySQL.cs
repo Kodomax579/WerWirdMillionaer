@@ -25,8 +25,6 @@ namespace Spiel
             try
             {
                 conn.Open();
-
-
             }
             catch (MySqlException e)
             {
@@ -35,7 +33,7 @@ namespace Spiel
         
         
         }
-        public bool Login(string username, string password)
+        public int Login(string username, string password)
         {
             string query = "SELECT * FROM spieler WHERE username = @username AND password = @password";
             MySqlCommand mySqlCommand = conn.CreateCommand();
@@ -45,11 +43,40 @@ namespace Spiel
             mySqlCommand.Parameters.AddWithValue("@username", username);
             mySqlCommand.Parameters.AddWithValue("@password", password);
 
-            MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+            using (MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader())
+            {
+                if (mySqlDataReader.Read())
+                {
+                    // Gib die SpielerID zurück (angenommen, dass die SpielerID die erste Spalte in der Abfrage ist)
+                    return mySqlDataReader.GetInt32(0);
+                }
+            }
 
-            return mySqlDataReader.HasRows;
+            return 0;
+
         }
 
+        public bool SignUp(string Name, string Nachname, string Username, string Password, string Email)
+        {
+            string query = "INSERT INTO `spieler`(`name`, `nachname`, `username`, `password`, `email`) VALUES (@name, @nachname, @username, @password, @email)";
+            MySqlCommand mySqlCommand = conn.CreateCommand();
+            mySqlCommand.CommandText = query;
+
+            mySqlCommand.Parameters.AddWithValue("@name", Name);
+            mySqlCommand.Parameters.AddWithValue("@nachname", Nachname);
+            mySqlCommand.Parameters.AddWithValue("@username", Username);
+            mySqlCommand.Parameters.AddWithValue("@password", Password);
+            mySqlCommand.Parameters.AddWithValue("@email", Email);
+
+            int rowsAffected = mySqlCommand.ExecuteNonQuery();
+
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
 
     }
 
