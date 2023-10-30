@@ -34,7 +34,7 @@ namespace Spiel
             Settings set = new Settings();
             this.Close();
             set.Show();
-            
+
         }
 
         private void Startseite_Load(object sender, EventArgs e)
