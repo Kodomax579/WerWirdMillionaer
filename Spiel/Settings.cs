@@ -21,7 +21,7 @@ namespace Spiel
 
 
 
-        
+        private TrackBar SettingsTonSlider = new TrackBar();
 
         private void SettingsTonButton_MouseEnter(object sender, EventArgs e)
         {
