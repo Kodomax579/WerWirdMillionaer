@@ -41,13 +41,16 @@
             this.SettingsTonButton.TabIndex = 0;
             this.SettingsTonButton.Text = "button1";
             this.SettingsTonButton.UseVisualStyleBackColor = true;
+            this.SettingsTonButton.MouseEnter += new System.EventHandler(this.SettingsTonButton_MouseEnter);
+            this.SettingsTonButton.MouseLeave += new System.EventHandler(this.SettingsTonButton_MouseLeave);
             // 
             // SettingsTonSlider
             // 
-            this.SettingsTonSlider.Location = new System.Drawing.Point(331, 151);
+            this.SettingsTonSlider.Location = new System.Drawing.Point(335, 151);
             this.SettingsTonSlider.Name = "SettingsTonSlider";
             this.SettingsTonSlider.Size = new System.Drawing.Size(130, 56);
             this.SettingsTonSlider.TabIndex = 1;
+            this.SettingsTonSlider.Visible = false;
             // 
             // Settings
             // 
@@ -67,6 +70,6 @@
         #endregion
 
         private Button SettingsTonButton;
-        private TrackBar SettingsTonSlider;
+        
     }
 }
