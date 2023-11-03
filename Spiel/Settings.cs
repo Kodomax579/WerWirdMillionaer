@@ -34,7 +34,7 @@ namespace Spiel
             SettingsTonSlider.Visible = true;
 
             // Handle the MouseLeave event to make it invisible when the mouse leaves
-            SettingsTonButton.MouseLeave += new EventHandler(SettingsTonButton_MouseLeave);
+           // SettingsTonButton.MouseLeave += new EventHandler(SettingsTonButton_MouseLeave);
         }
 
         private void SettingsTonButton_MouseLeave(object sender, EventArgs e)
