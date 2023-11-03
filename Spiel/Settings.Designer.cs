@@ -41,6 +41,8 @@
             this.SettingsTonButton.TabIndex = 0;
             this.SettingsTonButton.Text = "button1";
             this.SettingsTonButton.UseVisualStyleBackColor = true;
+            this.SettingsTonButton.MouseEnter += new System.EventHandler(this.SettingsTonButton_MouseEnter);
+            this.SettingsTonButton.MouseLeave += new System.EventHandler(this.SettingsTonButton_MouseLeave);
             // 
             // SettingsTonSlider
             // 
@@ -58,6 +60,7 @@
             this.Controls.Add(this.SettingsTonButton);
             this.Name = "Settings";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Settings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SettingsTonSlider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

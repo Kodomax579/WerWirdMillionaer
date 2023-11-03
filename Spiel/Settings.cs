@@ -13,6 +13,8 @@ namespace Spiel
     public partial class Settings : Form
     {
         
+        private void Settings_Load(object sender, EventArgs e)
+        {}
 
         public Settings()
         {
@@ -40,6 +42,6 @@ namespace Spiel
             SettingsTonSlider.Visible = false;
         }
 
-
+        
     }
 }
