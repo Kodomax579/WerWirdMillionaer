@@ -67,6 +67,6 @@
         #endregion
 
         private Button SettingsTonButton;
-        private TrackBar SettingsTonSlider;
+        
     }
 }
