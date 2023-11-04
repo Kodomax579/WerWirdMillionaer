@@ -14,7 +14,7 @@ namespace Spiel
     {
         
         private void Settings_Load(object sender, EventArgs e)
-        {}
+        { SettingsTonSlider.Visible = false; }
 
         public Settings()
         {
