@@ -19,7 +19,7 @@ namespace Spiel
 
             SpielerID = mysql.Login(Username, Password);
 
-            if(SpielerID >0) 
+            if (SpielerID > 0)
             {
                 return SpielerID;
             }
@@ -27,7 +27,6 @@ namespace Spiel
             {
                 return 0;
             }
-            //bla bla bla 
         }
 
         public bool SignUP(TextBox name,TextBox nachname, TextBox username, TextBox email,TextBox passwort) 

@@ -46,5 +46,12 @@ namespace Spiel
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Spielfeld spiel = new Spielfeld();
+            this.Close();
+            spiel.Show();
+        }
     }
 }
