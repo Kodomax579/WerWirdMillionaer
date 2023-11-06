@@ -7,13 +7,17 @@ using MySql;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Tls;
 using System.Data.SqlClient;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Xml.Linq;
+using System.Collections;
 
 namespace Spiel
 {
 
     class MySQL
     {
+        
         private MySqlConnection conn;
 
         public MySQL(string server, string database, string user, string password, string port, string sslM)
@@ -79,6 +83,39 @@ namespace Spiel
 
             return false;
         }
+
+
+
+        public List<string> GetFrage(int stage)
+        {
+            List<string> selectedFragen = new List<string>();
+            string query = "SELECT ID,`Frage`, `Antwort 1`, `Antwort 2`, `Antwort 3`, `Antwort 4`,`Richtige Antwort` FROM `fragen` WHERE Schwierigkeit = @schwierigkeit";
+            MySqlCommand mySqlCommand = conn.CreateCommand();
+            mySqlCommand.CommandText = query;
+
+            mySqlCommand.Parameters.AddWithValue("@schwierigkeit", stage);
+
+            using (MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader())
+            {
+                while (mySqlDataReader.Read())
+                { 
+                    string id = mySqlDataReader.GetString(0);
+                    string frage = mySqlDataReader.GetString(1); // Frage
+                    string antwort1 = mySqlDataReader.GetString(2); // Antwort 1
+                    string antwort2 = mySqlDataReader.GetString(3); // Antwort 2
+                    string antwort3 = mySqlDataReader.GetString(4); // Antwort 3
+                    string antwort4 = mySqlDataReader.GetString(5); // Antwort 4
+                    string antwort = mySqlDataReader.GetString(6); //Richtige Antwort
+
+                    string datensatz = $"{id},{frage}, {antwort1}, {antwort2}, {antwort3}, {antwort4},{antwort}";
+                    selectedFragen.Add(datensatz);
+                }
+            }
+            
+            return selectedFragen;
+        }
+
+
 
     }
 
