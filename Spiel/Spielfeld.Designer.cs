@@ -53,6 +53,7 @@
             Antwort1.TabIndex = 0;
             Antwort1.Text = "button1";
             Antwort1.UseVisualStyleBackColor = true;
+            Antwort1.Click += Antwort1_Click;
             // 
             // Antwort2
             // 
@@ -62,6 +63,7 @@
             Antwort2.TabIndex = 1;
             Antwort2.Text = "button2";
             Antwort2.UseVisualStyleBackColor = true;
+            Antwort2.Click += Antwort2_Click;
             // 
             // Antwort3
             // 
@@ -71,6 +73,7 @@
             Antwort3.TabIndex = 2;
             Antwort3.Text = "button3";
             Antwort3.UseVisualStyleBackColor = true;
+            Antwort3.Click += Antwort3_Click;
             // 
             // Antwort4
             // 
@@ -80,6 +83,7 @@
             Antwort4.TabIndex = 3;
             Antwort4.Text = "button4";
             Antwort4.UseVisualStyleBackColor = true;
+            Antwort4.Click += Antwort4_Click;
             // 
             // frage
             // 

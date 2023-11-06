@@ -89,7 +89,7 @@ namespace Spiel
         public List<string> GetFrage(int stage)
         {
             List<string> selectedFragen = new List<string>();
-            string query = "SELECT `Frage`, `Antwort 1`, `Antwort 2`, `Antwort 3`, `Antwort 4`, `Richtige Antwort` FROM `fragen` WHERE Schwierigkeit = @schwierigkeit";
+            string query = "SELECT ID,`Frage`, `Antwort 1`, `Antwort 2`, `Antwort 3`, `Antwort 4`,`Richtige Antwort` FROM `fragen` WHERE Schwierigkeit = @schwierigkeit";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
 
@@ -98,15 +98,16 @@ namespace Spiel
             using (MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader())
             {
                 while (mySqlDataReader.Read())
-                {
-                    string frage = mySqlDataReader.GetString(0); // Frage
-                    string antwort1 = mySqlDataReader.GetString(1); // Antwort 1
-                    string antwort2 = mySqlDataReader.GetString(2); // Antwort 2
-                    string antwort3 = mySqlDataReader.GetString(3); // Antwort 3
-                    string antwort4 = mySqlDataReader.GetString(4); // Antwort 4
-                    string richtigeAntwort = mySqlDataReader.GetString(5); // Richtige Antwort
+                { 
+                    string id = mySqlDataReader.GetString(0);
+                    string frage = mySqlDataReader.GetString(1); // Frage
+                    string antwort1 = mySqlDataReader.GetString(2); // Antwort 1
+                    string antwort2 = mySqlDataReader.GetString(3); // Antwort 2
+                    string antwort3 = mySqlDataReader.GetString(4); // Antwort 3
+                    string antwort4 = mySqlDataReader.GetString(5); // Antwort 4
+                    string antwort = mySqlDataReader.GetString(6); //Richtige Antwort
 
-                    string datensatz = $"{frage}, {antwort1}, {antwort2}, {antwort3}, {antwort4}, {richtigeAntwort}";
+                    string datensatz = $"{id},{frage}, {antwort1}, {antwort2}, {antwort3}, {antwort4},{antwort}";
                     selectedFragen.Add(datensatz);
                 }
             }
