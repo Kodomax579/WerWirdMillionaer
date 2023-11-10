@@ -21,18 +21,18 @@ namespace Spiel
 
         private void Spielfeld_Load(object sender, EventArgs e)
         {
-            controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4);
+            controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4,Stufe1);
         }
 
         private void Antwort1_Click(object sender, EventArgs e)
         {
-            if(controller.Antwort(1) && controller.gewonnen())
+            if (controller.Antwort(1) && controller.gewonnen())
             {
-                
-                controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4);
+
+                controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1);
 
             }
-            else if(controller.Antwort(1) == true && controller.gewonnen() == false)
+            else if (controller.Antwort(1) == true && controller.gewonnen() == false)
             {
                 Gewonnen gewonnen = new Gewonnen();
                 gewonnen.Show();
@@ -40,8 +40,8 @@ namespace Spiel
             }
             else
             {
-               GO.Show();
-               this.Close();
+                GO.Show();
+                this.Close();
             }
         }
 
@@ -50,7 +50,7 @@ namespace Spiel
             if (controller.Antwort(2) && controller.gewonnen())
             {
 
-                controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4);
+                controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1);
 
             }
             else if (controller.Antwort(2) == true && controller.gewonnen() == false)
@@ -71,7 +71,7 @@ namespace Spiel
             if (controller.Antwort(3) && controller.gewonnen())
             {
 
-                controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4);
+                controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1);
 
             }
             else if (controller.Antwort(3) == true && controller.gewonnen() == false)
@@ -92,7 +92,7 @@ namespace Spiel
             if (controller.Antwort(4) && controller.gewonnen())
             {
 
-                controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4);
+                controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1);
 
             }
             else if (controller.Antwort(4) == true && controller.gewonnen() == false)
@@ -108,6 +108,9 @@ namespace Spiel
             }
         }
 
-       
+        private void Stufe1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
