@@ -15,7 +15,7 @@ namespace Spiel
         int Zaehler =0;
 
 
-        public void GetFrage(Label frage, Button antwort1, Button antwort2, Button antwort3, Button antwort4)
+        public void GetFrage(Label frage, Button antwort1, Button antwort2, Button antwort3, Button antwort4, CheckBox stufe1)
         {
             Zaehler ++;
             List<string> Liste = mysql.GetFrage(Zaehler); // Annahme, dass GetFrage eine Liste von Fragen zurückgibt
@@ -38,6 +38,13 @@ namespace Spiel
                     antwort3.Text = frageTeile[4].Trim(); // Antwort 3
                     antwort4.Text = frageTeile[5].Trim(); // Antwort 4 
                     RichtigeAntwort = int.Parse(frageTeile[6].Trim());//Richtige Antwort
+                }
+                switch(Zaehler)
+                {
+                    case 2:
+                        stufe1.Checked = true;
+                        break;
+                    
                 }
                 
             }
