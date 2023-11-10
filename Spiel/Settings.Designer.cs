@@ -30,14 +30,17 @@
         {
             this.SettingsTonButton = new System.Windows.Forms.Button();
             this.SettingsTonSlider = new System.Windows.Forms.TrackBar();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.SchwierigkeitsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SettingsTonSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // SettingsTonButton
             // 
-            this.SettingsTonButton.Location = new System.Drawing.Point(168, 151);
+            this.SettingsTonButton.Location = new System.Drawing.Point(164, 111);
             this.SettingsTonButton.Name = "SettingsTonButton";
-            this.SettingsTonButton.Size = new System.Drawing.Size(94, 29);
+            this.SettingsTonButton.Size = new System.Drawing.Size(94, 56);
             this.SettingsTonButton.TabIndex = 0;
             this.SettingsTonButton.Text = "button1";
             this.SettingsTonButton.UseVisualStyleBackColor = true;
@@ -46,22 +49,43 @@
             // 
             // SettingsTonSlider
             // 
-            this.SettingsTonSlider.Location = new System.Drawing.Point(331, 151);
+            this.SettingsTonSlider.Location = new System.Drawing.Point(236, 111);
             this.SettingsTonSlider.Name = "SettingsTonSlider";
-            this.SettingsTonSlider.Size = new System.Drawing.Size(130, 56);
+            this.SettingsTonSlider.Size = new System.Drawing.Size(200, 56);
             this.SettingsTonSlider.TabIndex = 1;
+            this.SettingsTonSlider.MouseEnter += new System.EventHandler(this.SettingsTonSlider_MouseEnter);
+            this.SettingsTonSlider.MouseLeave += new System.EventHandler(this.SettingsTonSlider_MouseLeave);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(236, 207);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(200, 56);
+            this.trackBar1.TabIndex = 3;
+            // 
+            // SchwierigkeitsButton
+            // 
+            this.SchwierigkeitsButton.Location = new System.Drawing.Point(164, 207);
+            this.SchwierigkeitsButton.Name = "SchwierigkeitsButton";
+            this.SchwierigkeitsButton.Size = new System.Drawing.Size(94, 56);
+            this.SchwierigkeitsButton.TabIndex = 2;
+            this.SchwierigkeitsButton.Text = "button1";
+            this.SchwierigkeitsButton.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1246, 571);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.SchwierigkeitsButton);
             this.Controls.Add(this.SettingsTonSlider);
             this.Controls.Add(this.SettingsTonButton);
             this.Name = "Settings";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Settings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SettingsTonSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -70,6 +94,7 @@
         #endregion
 
         private Button SettingsTonButton;
-        
+        private TrackBar trackBar1;
+        private Button SchwierigkeitsButton;
     }
 }

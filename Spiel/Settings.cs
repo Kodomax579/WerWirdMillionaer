@@ -12,7 +12,8 @@ namespace Spiel
 {
     public partial class Settings : Form
     {
-        
+        private bool MouseOnSlider = false;
+        public bool TonSliderVisibility;
         private void Settings_Load(object sender, EventArgs e)
         { SettingsTonSlider.Visible = false; }
 
@@ -25,23 +26,49 @@ namespace Spiel
 
         private void SettingsTonButton_MouseEnter(object sender, EventArgs e)
         {
-            // Add the TrackBar control to your form
             this.Controls.Add(SettingsTonSlider);
 
-            // Set the control's properties
-            SettingsTonSlider.Location = new Point(50, 50); // Adjust the location as needed
-            SettingsTonSlider.Size = new Size(200, 45);   // Adjust the size as needed
-            SettingsTonSlider.Visible = true;
+            SettingsTonButton.SendToBack();
+            SettingsTonSlider.BringToFront();
+            TonSliderVisibility = true;
+            TonSliderVisible();
+            
+        }
 
-            // Handle the MouseLeave event to make it invisible when the mouse leaves
-            SettingsTonButton.MouseLeave += new EventHandler(SettingsTonButton_MouseLeave);
+        private void SettingsTonSlider_MouseEnter(object sender, EventArgs e)
+            {
+                MouseOnSlider = true;
+                TonSliderVisibility = true;
+                SettingsTonButton.SendToBack();
+                SettingsTonSlider.BringToFront();
+                TonSliderVisible();
+        }
+
+        private void SettingsTonSlider_MouseLeave(object sender, EventArgs e)
+        {
+            TonSliderVisibility = false;
+            TonSliderVisible();
         }
 
         private void SettingsTonButton_MouseLeave(object sender, EventArgs e)
-        {
-            SettingsTonSlider.Visible = false;
+        { 
+            if (MouseOnSlider == false)
+            {
+                TonSliderVisibility = false;
+                TonSliderVisible();
+            }
         }
 
-        
+        private void TonSliderVisible()
+        {
+            if (TonSliderVisibility == true)
+            {
+                SettingsTonSlider.Visible = true;
+            }
+            else if (TonSliderVisibility == false)
+            {
+                SettingsTonSlider.Visible = false;
+            }
+        }
     }
 }
