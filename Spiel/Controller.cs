@@ -15,7 +15,7 @@ namespace Spiel
         int Zaehler =0;
 
 
-        public void GetFrage(Label frage, Button antwort1, Button antwort2, Button antwort3, Button antwort4, CheckBox stufe1)
+        public void GetFrage(Label frage, Button antwort1, Button antwort2, Button antwort3, Button antwort4, CheckBox stufe1, CheckBox stufe2, CheckBox stufe3, CheckBox stufe4, CheckBox stufe5, CheckBox stufe6, CheckBox stufe7, CheckBox stufe8, CheckBox stufe9, CheckBox stufe10)
         {
             Zaehler ++;
             List<string> Liste = mysql.GetFrage(Zaehler); // Annahme, dass GetFrage eine Liste von Fragen zurückgibt
@@ -44,7 +44,31 @@ namespace Spiel
                     case 2:
                         stufe1.Checked = true;
                         break;
-                    
+                    case 3:
+                        stufe2.Checked = true;
+                        break;
+                    case 4:
+                        stufe3.Checked = true;
+                        break;
+                    case 5:
+                        stufe4.Checked = true;
+                        break;
+                    case 6:
+                        stufe5.Checked = true;
+                        break;
+                    case 7:
+                        stufe6.Checked = true;
+                        break;
+                    case 8:
+                        stufe7.Checked = true;
+                        break;
+                    case 9:
+                        stufe8.Checked = true;
+                        break;
+                    case 10:
+                        stufe9.Checked = true;
+                        break;
+
                 }
                 
             }
