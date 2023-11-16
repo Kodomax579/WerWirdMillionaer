@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Antwort1 = new Button();
             Antwort2 = new Button();
             Antwort3 = new Button();
@@ -43,6 +44,7 @@
             Stufe7 = new CheckBox();
             Stufe10 = new CheckBox();
             Stufe9 = new CheckBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // Antwort1
@@ -206,6 +208,10 @@
             Stufe9.Text = "500.000€";
             Stufe9.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            // 
             // Spielfeld
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -250,5 +256,6 @@
         private CheckBox Stufe7;
         private CheckBox Stufe10;
         private CheckBox Stufe9;
+        private System.Windows.Forms.Timer timer1;
     }
 }

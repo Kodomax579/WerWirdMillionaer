@@ -13,7 +13,8 @@ namespace Spiel
     public partial class Spielfeld : Form
     {
         Controller controller = new Controller();
-        GameOver GO = new GameOver();
+        Startseite Startseite = new Startseite();
+
         public Spielfeld()
         {
             InitializeComponent();
@@ -24,86 +25,91 @@ namespace Spiel
             controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1, Stufe2, Stufe3, Stufe4, Stufe5, Stufe6, Stufe7, Stufe8, Stufe9, Stufe10);
         }
 
-        private void Antwort1_Click(object sender, EventArgs e)
+        private async void Antwort1_Click(object sender, EventArgs e)
         {
-            if (controller.Antwort(1) && controller.gewonnen())
-            {
+         
+            bool isAnswerCorrect = await controller.Antwort(1, Antwort1, Antwort2, Antwort3, Antwort4);
 
+            if (isAnswerCorrect && controller.gewonnen())
+            {
                 controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1, Stufe2, Stufe3, Stufe4, Stufe5, Stufe6, Stufe7, Stufe8, Stufe9, Stufe10);
-
             }
-            else if (controller.Antwort(1) == true && controller.gewonnen() == false)
+            else if (isAnswerCorrect == true && controller.gewonnen() == false)
             {
-                Gewonnen gewonnen = new Gewonnen();
-                gewonnen.Show();
+                MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Startseite.Show();
                 this.Close();
             }
             else
             {
-                GO.Show();
+                MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Startseite.Show();
                 this.Close();
             }
         }
 
-        private void Antwort2_Click(object sender, EventArgs e)
+        private async void Antwort2_Click(object sender, EventArgs e)
         {
-            if (controller.Antwort(2) && controller.gewonnen())
-            {
+            bool isAnswerCorrect = await controller.Antwort(2, Antwort1, Antwort2, Antwort3, Antwort4);
 
+            if (isAnswerCorrect && controller.gewonnen())
+            {
                 controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1, Stufe2, Stufe3, Stufe4, Stufe5, Stufe6, Stufe7, Stufe8, Stufe9, Stufe10);
-
             }
-            else if (controller.Antwort(2) == true && controller.gewonnen() == false)
+            else if (isAnswerCorrect == true && controller.gewonnen() == false)
             {
-                Gewonnen gewonnen = new Gewonnen();
-                gewonnen.Show();
+                MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Startseite.Show();
                 this.Close();
             }
             else
             {
-                GO.Show();
+                MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Startseite.Show();
                 this.Close();
             }
         }
 
-        private void Antwort3_Click(object sender, EventArgs e)
+        private async void Antwort3_Click(object sender, EventArgs e)
         {
-            if (controller.Antwort(3) && controller.gewonnen())
-            {
+            bool isAnswerCorrect = await controller.Antwort(3, Antwort1, Antwort2, Antwort3, Antwort4);
 
+            if (isAnswerCorrect && controller.gewonnen())
+            {
                 controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1, Stufe2, Stufe3, Stufe4, Stufe5, Stufe6, Stufe7, Stufe8, Stufe9, Stufe10);
-
             }
-            else if (controller.Antwort(3) == true && controller.gewonnen() == false)
+            else if (isAnswerCorrect == true && controller.gewonnen() == false)
             {
-                Gewonnen gewonnen = new Gewonnen();
-                gewonnen.Show();
+                MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Startseite.Show();
                 this.Close();
             }
             else
             {
-                GO.Show();
+                MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Startseite.Show();
                 this.Close();
             }
         }
 
-        private void Antwort4_Click(object sender, EventArgs e)
+        private async void Antwort4_Click(object sender, EventArgs e)
         {
-            if (controller.Antwort(4) && controller.gewonnen())
-            {
+            bool isAnswerCorrect = await controller.Antwort(4, Antwort1, Antwort2, Antwort3, Antwort4);
 
+            if (isAnswerCorrect && controller.gewonnen())
+            {
                 controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1, Stufe2, Stufe3, Stufe4, Stufe5, Stufe6, Stufe7, Stufe8, Stufe9, Stufe10);
-
             }
-            else if (controller.Antwort(4) == true && controller.gewonnen() == false)
+            else if (isAnswerCorrect == true && controller.gewonnen() == false)
             {
-                Gewonnen gewonnen = new Gewonnen();
-                gewonnen.Show();
+                MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Startseite.Show();
                 this.Close();
             }
             else
             {
-                GO.Show();
+                MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Startseite.Show();
                 this.Close();
             }
         }
