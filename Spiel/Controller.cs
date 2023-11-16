@@ -15,9 +15,11 @@ namespace Spiel
         int Zaehler =0;
 
 
-        public void GetFrage(Label frage, Button antwort1, Button antwort2, Button antwort3, Button antwort4, CheckBox stufe1)
+        public void GetFrage(Label frage, Button antwort1, Button antwort2, Button antwort3, Button antwort4, CheckBox stufe1, CheckBox stufe2, CheckBox stufe3, CheckBox stufe4, CheckBox stufe5, CheckBox stufe6, CheckBox stufe7, CheckBox stufe8, CheckBox stufe9, CheckBox stufe10)
         {
-            Zaehler ++;
+            // Initialisieren Sie die Variable check
+            
+            Zaehler++;
             List<string> Liste = mysql.GetFrage(Zaehler); // Annahme, dass GetFrage eine Liste von Fragen zurückgibt
 
             if (Liste != null && Liste.Count > 0)
@@ -39,31 +41,48 @@ namespace Spiel
                     antwort4.Text = frageTeile[5].Trim(); // Antwort 4 
                     RichtigeAntwort = int.Parse(frageTeile[6].Trim());//Richtige Antwort
                 }
+
                 switch(Zaehler)
                 {
-                    case 2:
-                        stufe1.Checked = true;
-                        break;
-                    
+                    case 2: stufe1.Checked= true; break;
+                    case 3: stufe2.Checked= true; break;
+                    case 4: stufe3.Checked= true; break;
+                    case 5: stufe4.Checked= true; break;
+                    case 6: stufe5.Checked= true; break;
+                    case 7: stufe6.Checked= true; break;
+                    case 8: stufe7.Checked= true; break;
+                    case 9: stufe8.Checked= true; break;
+                    case 10: stufe9.Checked= true; break;
+
                 }
-                
             }
         }
-        public bool Antwort(int Antwort)
+
+        public async Task<bool> Antwort(int Antwort, Button antwort1, Button antwort2, Button antwort3, Button antwort4)
         {
-            if(Antwort == RichtigeAntwort)
+            Button[] answerButtons = { antwort1, antwort2, antwort3, antwort4 };
+
+            foreach (Button btn in answerButtons)
             {
-                return true;
+                btn.BackColor = Color.Red;
             }
-            else
+             answerButtons[RichtigeAntwort - 1].BackColor = Color.Green;
+            
+
+            await Task.Delay(3000);
+
+            foreach (Button btn in answerButtons)
             {
-                return false;
+                btn.BackColor =default(Color);
             }
+
+            return Antwort == RichtigeAntwort;
         }
         public bool gewonnen()
         {
             if(Zaehler < 10)
             {
+
                 return true;
             }
             else
@@ -71,6 +90,7 @@ namespace Spiel
                 return false;
             }
         }
+
        
     }
 }
