@@ -115,8 +115,31 @@ namespace Spiel
             return selectedFragen;
         }
 
+        public void InsertHighscore(int SpielerID,int Stufe)
+        {
+            string query = "INSERT INTO `highscore`( `Stufe`, `SpielerID`) VALUES ('@Stufe','@SpielerID')";
 
+            MySqlCommand mySqlCommand = conn.CreateCommand();
+            mySqlCommand.CommandText = query;
 
+            mySqlCommand.Parameters.AddWithValue("@Stufe", Stufe);
+            mySqlCommand.Parameters.AddWithValue("@SpielerID", SpielerID);
+
+            mySqlCommand.ExecuteNonQuery();
+        }
+
+        public List<string> GetRanked()
+        {
+            List<string> ranked = new List<string>();
+
+            string query = "SELECT spieler.username From highscore JOIN spieler ON highscore.SpielerID = spieler.ID GROUP BY ASC(Stufe)";
+            MySqlCommand mySqlCommand = conn.CreateCommand();
+            mySqlCommand.CommandText = query;
+
+            
+
+            return ranked;
+
+        }
     }
-
 }

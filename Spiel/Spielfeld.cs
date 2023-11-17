@@ -36,12 +36,16 @@ namespace Spiel
             }
             else if (isAnswerCorrect == true && controller.gewonnen() == false)
             {
+                controller.InsertRanked();
+
                 MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
             }
             else
             {
+                controller.InsertRanked();
+
                 MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
@@ -58,12 +62,16 @@ namespace Spiel
             }
             else if (isAnswerCorrect == true && controller.gewonnen() == false)
             {
+                controller.InsertRanked();
+
                 MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
             }
             else
             {
+                controller.InsertRanked();
+
                 MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
@@ -80,12 +88,16 @@ namespace Spiel
             }
             else if (isAnswerCorrect == true && controller.gewonnen() == false)
             {
+                controller.InsertRanked();
+
                 MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
             }
             else
             {
+                controller.InsertRanked();
+
                 MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
@@ -102,12 +114,16 @@ namespace Spiel
             }
             else if (isAnswerCorrect == true && controller.gewonnen() == false)
             {
+                controller.InsertRanked();
+
                 MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
             }
             else
             {
+                controller.InsertRanked();
+
                 MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
