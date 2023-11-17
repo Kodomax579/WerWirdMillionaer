@@ -45,5 +45,9 @@ namespace Spiel
             return false;
             
         }
+        public int getSpielerID()
+        {
+            return SpielerID;
+        }
     }
 }

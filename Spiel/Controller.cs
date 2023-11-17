@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.BC;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,8 @@ namespace Spiel
         int ID;
         int RichtigeAntwort; 
         int Zaehler =0;
-
+        Spieler spieler = new Spieler();
+        int SpielerID;
 
         public void GetFrage(Label frage, Button antwort1, Button antwort2, Button antwort3, Button antwort4, CheckBox stufe1, CheckBox stufe2, CheckBox stufe3, CheckBox stufe4, CheckBox stufe5, CheckBox stufe6, CheckBox stufe7, CheckBox stufe8, CheckBox stufe9, CheckBox stufe10)
         {
@@ -75,6 +77,8 @@ namespace Spiel
             {
                 btn.BackColor =default(Color);
             }
+            
+
 
             return Antwort == RichtigeAntwort;
         }
@@ -91,6 +95,17 @@ namespace Spiel
             }
         }
 
-       
+        public void getranked(Label erster, Label zweiter, Label dritter, Label meinPlatz)
+        {
+            
+        }
+
+        public void InsertRanked()
+        {
+            Spieler spieler = new Spieler();
+            SpielerID = spieler.getSpielerID();
+
+            mysql.InsertHighscore(SpielerID, Zaehler);
+        }
     }
 }
