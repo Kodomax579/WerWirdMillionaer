@@ -115,20 +115,58 @@ namespace Spiel
             return selectedFragen;
         }
 
-        public void InsertHighscore(int SpielerID,int Stufe)
+        public bool InsertHighscore(int SpielerID, int Stufe)
         {
-            string query = "INSERT INTO `highscore`( `Stufe`, `SpielerID`) VALUES ('@Stufe','@SpielerID')";
+            // Erstelle die INSERT-Anweisung
+            string query = "INSERT INTO `highscore`(`Stufe`,`username`) VALUES ('@Stufe','@username')";
+            // Füge die WHERE-Klausel hinzu
+           
 
-            MySqlCommand mySqlCommand = conn.CreateCommand();
-            mySqlCommand.CommandText = query;
+            // Erstelle das Command
+            MySqlCommand mySqlCommand = new MySqlCommand(query, conn);
 
+            // Füge die Parameter 
+
+
+            // Führe die Anweisung aus
+
+            string username = getUsername(SpielerID);
             mySqlCommand.Parameters.AddWithValue("@Stufe", Stufe);
-            mySqlCommand.Parameters.AddWithValue("@SpielerID", SpielerID);
+            mySqlCommand.Parameters.AddWithValue("@username", username);
 
-            mySqlCommand.ExecuteNonQuery();
+            int rowsAffected = mySqlCommand.ExecuteNonQuery();
+
+            // Überprüfe das Ergebnis
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            return false;
         }
 
-        public List<string> GetRanked()
+        private string getUsername(int SpielerID)
+        {
+            
+            string query2 = "SELECT username  FROM spieler WHERE ID = @spielerID";
+            MySqlCommand mySqlCommand2 = new MySqlCommand(query2, conn);
+
+            mySqlCommand2.Parameters.AddWithValue("@spielerID", SpielerID);
+
+            using (MySqlDataReader mySqlDataReader = mySqlCommand2.ExecuteReader())
+            {
+                while (mySqlDataReader.Read())
+                {
+                    string username = mySqlDataReader.GetString(0);
+                    return username;
+                }
+                
+            }
+            return null;
+           
+        }
+
+
+        public List<string> GetRanke()
         {
             List<string> ranked = new List<string>();
 

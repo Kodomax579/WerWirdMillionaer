@@ -12,9 +12,16 @@ namespace Spiel
 {
     public partial class Startseite : Form
     {
+        int ID;
+        public Startseite(int SpielerID)
+        {
+            ID = SpielerID;
+            InitializeComponent();
+            
+        }
         public Startseite()
         {
-
+            
             InitializeComponent();
 
         }
@@ -49,7 +56,7 @@ namespace Spiel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Spielfeld spiel = new Spielfeld();
+            Spielfeld spiel = new Spielfeld(ID);
             this.Close();
             spiel.Show();
         }

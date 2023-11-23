@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.Mozilla;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,14 @@ namespace Spiel
 {
     class Spieler
     {
-        int SpielerID;
+        // This should be a class member variable, not a local variable
 
+        private int SpielerID;
         private MySQL mysql = new MySQL("localhost", "wwm", "root", "", "3306", "none");
 
-        public int login(TextBox username,TextBox password)
+        
+
+        public int login(TextBox username, TextBox password)
         {
             string Username = username.Text;
             string Password = password.Text;
@@ -28,6 +32,7 @@ namespace Spiel
                 return 0;
             }
         }
+
 
         public bool SignUP(TextBox name,TextBox nachname, TextBox username, TextBox email,TextBox passwort) 
         {
