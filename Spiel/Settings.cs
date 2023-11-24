@@ -13,62 +13,147 @@ namespace Spiel
     public partial class Settings : Form
     {
         private bool MouseOnSlider = false;
-        public bool TonSliderVisibility;
+        private bool MouseOnS_Slider = false;
+        public bool SchriftGrößeSliderVisibility;
+        public bool SchwierigkeitsSliderVisibility;
         private void Settings_Load(object sender, EventArgs e)
-        { SettingsTonSlider.Visible = false; }
+        { SchriftGrößeSlider.Visible = false;
+            SchwierigkeitsSlider.Visible = false;
+        }
 
         public Settings()
         {
             InitializeComponent();
 
         }
-        private TrackBar SettingsTonSlider = new TrackBar();
+        private TrackBar SchriftGrößeSlider = new TrackBar();
 
-        private void SettingsTonButton_MouseEnter(object sender, EventArgs e)
+        private void SchriftGrößeButton_MouseEnter(object sender, EventArgs e)
         {
-            this.Controls.Add(SettingsTonSlider);
+            this.Controls.Add(SchriftGrößeSlider);
 
-            SettingsTonButton.SendToBack();
-            SettingsTonSlider.BringToFront();
-            TonSliderVisibility = true;
-            TonSliderVisible();
+            SchriftGrößeButton.SendToBack();
+            SchriftGrößeSlider.BringToFront();
+            SchriftGrößeSliderVisibility = true;
+            SchriftGrößeSliderVisible();
             
         }
 
-        private void SettingsTonSlider_MouseEnter(object sender, EventArgs e)
+        private void SchriftGrößeSlider_MouseEnter(object sender, EventArgs e)
             {
                 MouseOnSlider = true;
-                TonSliderVisibility = true;
-                SettingsTonButton.SendToBack();
-                SettingsTonSlider.BringToFront();
-                TonSliderVisible();
+                SchriftGrößeSliderVisibility = true;
+                SchriftGrößeButton.SendToBack();
+                SchriftGrößeSlider.BringToFront();
+                SchriftGrößeSliderVisible();
         }
 
-        private void SettingsTonSlider_MouseLeave(object sender, EventArgs e)
+        private void SchriftGrößeSlider_MouseLeave(object sender, EventArgs e)
         {
-            TonSliderVisibility = false;
-            TonSliderVisible();
+            SchriftGrößeSliderVisibility = false;
+            SchriftGrößeSliderVisible();
         }
 
-        private void SettingsTonButton_MouseLeave(object sender, EventArgs e)
+        private void SchriftGrößeButton_MouseLeave(object sender, EventArgs e)
         { 
             if (MouseOnSlider == false)
             {
-                TonSliderVisibility = false;
-                TonSliderVisible();
+                SchriftGrößeSliderVisibility = false;
+                SchriftGrößeSliderVisible();
             }
         }
 
-        private void TonSliderVisible()
+        private void SchriftGrößeSliderVisible()
         {
-            if (TonSliderVisibility == true)
+            if (SchriftGrößeSliderVisibility == true)
             {
-                SettingsTonSlider.Visible = true;
+                SchriftGrößeSlider.Visible = true;
             }
-            else if (TonSliderVisibility == false)
+            else if (SchriftGrößeSliderVisibility == false)
             {
-                SettingsTonSlider.Visible = false;
+                SchriftGrößeSlider.Visible = false;
             }
+        }
+
+        ///////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
+
+        private TrackBar SchwierigkeitsSlider= new TrackBar();
+
+        private void SchwierigkeitsButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.Controls.Add(SchwierigkeitsSlider);
+
+            SchwierigkeitsButton.SendToBack();
+            SchwierigkeitsSlider.BringToFront();
+            SchwierigkeitsSliderVisibility = true;
+            SchwierigkeitsSliderVisible();
+        }
+
+        private void SchwierigkeitsSlider_MouseEnter(object sender, EventArgs e)
+        {
+            MouseOnS_Slider = true;
+            SchwierigkeitsSliderVisibility = true;
+            SchwierigkeitsButton.SendToBack();
+            SchwierigkeitsSlider.BringToFront();
+            SchwierigkeitsSliderVisible();
+        }
+
+        private void SchwierigkeitsSlider_MouseLeave(object sender, EventArgs e)
+        {
+            SchwierigkeitsSliderVisibility = false;
+            SchwierigkeitsSliderVisible();
+        }
+
+        private void SchwierigkeitsButton_MouseLeave(object sender, EventArgs e)
+        {
+            if (MouseOnS_Slider == false)
+            {
+                SchwierigkeitsSliderVisibility = false;
+                SchwierigkeitsSliderVisible();
+            }
+        }
+
+        private void SchwierigkeitsSliderVisible()
+        {
+            if (SchwierigkeitsSliderVisibility == true)
+            {
+                SchwierigkeitsSlider.Visible = true;
+            }
+            else if (SchwierigkeitsSliderVisibility == false)
+            {
+                SchwierigkeitsSlider.Visible = false;
+            }
+        }
+
+        ///////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////
+        private void DarkModeButton_Click(object sender, EventArgs e)
+        {
+            if(DarkModeImg.Visible == true)
+            {
+                DarkModeImg.Visible = false;
+            }
+            else if(DarkModeImg.Visible == false)
+            {
+                DarkModeImg.Visible = true;
+            }
+
+            if (LightModeImg.Visible == true)
+            {
+                LightModeImg.Visible = false;
+            }
+            else if (LightModeImg.Visible == false)
+            {
+                LightModeImg.Visible = true;
+            }           
+        }
+
+        private void DarkModeButton_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

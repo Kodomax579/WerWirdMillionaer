@@ -28,64 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SettingsTonButton = new System.Windows.Forms.Button();
-            this.SettingsTonSlider = new System.Windows.Forms.TrackBar();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
+            this.SchriftGrößeButton = new System.Windows.Forms.Button();
+            this.SchriftGrößeSlider = new System.Windows.Forms.TrackBar();
+            this.SchwierigkeitsSlider = new System.Windows.Forms.TrackBar();
             this.SchwierigkeitsButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.SettingsTonSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.DarkModeButton = new System.Windows.Forms.Button();
+            this.LightModeImg = new System.Windows.Forms.PictureBox();
+            this.DarkModeImg = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.SchriftGrößeSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchwierigkeitsSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightModeImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkModeImg)).BeginInit();
             this.SuspendLayout();
             // 
-            // SettingsTonButton
+            // SchriftGrößeButton
             // 
-            this.SettingsTonButton.Location = new System.Drawing.Point(164, 111);
-            this.SettingsTonButton.Name = "SettingsTonButton";
-            this.SettingsTonButton.Size = new System.Drawing.Size(94, 56);
-            this.SettingsTonButton.TabIndex = 0;
-            this.SettingsTonButton.Text = "button1";
-            this.SettingsTonButton.UseVisualStyleBackColor = true;
-            this.SettingsTonButton.MouseEnter += new System.EventHandler(this.SettingsTonButton_MouseEnter);
-            this.SettingsTonButton.MouseLeave += new System.EventHandler(this.SettingsTonButton_MouseLeave);
+            this.SchriftGrößeButton.Location = new System.Drawing.Point(98, 37);
+            this.SchriftGrößeButton.Name = "SchriftGrößeButton";
+            this.SchriftGrößeButton.Size = new System.Drawing.Size(94, 56);
+            this.SchriftGrößeButton.TabIndex = 0;
+            this.SchriftGrößeButton.Text = "button1";
+            this.SchriftGrößeButton.UseVisualStyleBackColor = true;
+            this.SchriftGrößeButton.MouseEnter += new System.EventHandler(this.SchriftGrößeButton_MouseEnter);
+            this.SchriftGrößeButton.MouseLeave += new System.EventHandler(this.SchriftGrößeButton_MouseLeave);
             // 
-            // SettingsTonSlider
+            // SchriftGrößeSlider
             // 
-            this.SettingsTonSlider.Location = new System.Drawing.Point(236, 111);
-            this.SettingsTonSlider.Name = "SettingsTonSlider";
-            this.SettingsTonSlider.Size = new System.Drawing.Size(200, 56);
-            this.SettingsTonSlider.TabIndex = 1;
-            this.SettingsTonSlider.MouseEnter += new System.EventHandler(this.SettingsTonSlider_MouseEnter);
-            this.SettingsTonSlider.MouseLeave += new System.EventHandler(this.SettingsTonSlider_MouseLeave);
+            this.SchriftGrößeSlider.Location = new System.Drawing.Point(170, 37);
+            this.SchriftGrößeSlider.Name = "SchriftGrößeSlider";
+            this.SchriftGrößeSlider.Size = new System.Drawing.Size(200, 56);
+            this.SchriftGrößeSlider.TabIndex = 1;
+            this.SchriftGrößeSlider.MouseEnter += new System.EventHandler(this.SchriftGrößeSlider_MouseEnter);
+            this.SchriftGrößeSlider.MouseLeave += new System.EventHandler(this.SchriftGrößeSlider_MouseLeave);
             // 
-            // trackBar1
+            // SchwierigkeitsSlider
             // 
-            this.trackBar1.Location = new System.Drawing.Point(236, 207);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(200, 56);
-            this.trackBar1.TabIndex = 3;
+            this.SchwierigkeitsSlider.Location = new System.Drawing.Point(170, 133);
+            this.SchwierigkeitsSlider.Name = "SchwierigkeitsSlider";
+            this.SchwierigkeitsSlider.Size = new System.Drawing.Size(200, 56);
+            this.SchwierigkeitsSlider.TabIndex = 3;
+            this.SchwierigkeitsSlider.MouseEnter += new System.EventHandler(this.SchwierigkeitsSlider_MouseEnter);
+            this.SchwierigkeitsSlider.MouseLeave += new System.EventHandler(this.SchwierigkeitsSlider_MouseLeave);
             // 
             // SchwierigkeitsButton
             // 
-            this.SchwierigkeitsButton.Location = new System.Drawing.Point(164, 207);
+            this.SchwierigkeitsButton.Location = new System.Drawing.Point(98, 133);
             this.SchwierigkeitsButton.Name = "SchwierigkeitsButton";
             this.SchwierigkeitsButton.Size = new System.Drawing.Size(94, 56);
             this.SchwierigkeitsButton.TabIndex = 2;
             this.SchwierigkeitsButton.Text = "button1";
             this.SchwierigkeitsButton.UseVisualStyleBackColor = true;
+            this.SchwierigkeitsButton.MouseEnter += new System.EventHandler(this.SchwierigkeitsButton_MouseEnter);
+            this.SchwierigkeitsButton.MouseLeave += new System.EventHandler(this.SchwierigkeitsButton_MouseLeave);
+            // 
+            // DarkModeButton
+            // 
+            this.DarkModeButton.Location = new System.Drawing.Point(98, 233);
+            this.DarkModeButton.Name = "DarkModeButton";
+            this.DarkModeButton.Size = new System.Drawing.Size(94, 56);
+            this.DarkModeButton.TabIndex = 4;
+            this.DarkModeButton.Text = "button1";
+            this.DarkModeButton.UseVisualStyleBackColor = true;
+            this.DarkModeButton.Click += new System.EventHandler(this.DarkModeButton_Click);
+            // 
+            // LightModeImg
+            // 
+            this.LightModeImg.Image = ((System.Drawing.Image)(resources.GetObject("LightModeImg.Image")));
+            this.LightModeImg.Location = new System.Drawing.Point(227, 233);
+            this.LightModeImg.Name = "LightModeImg";
+            this.LightModeImg.Size = new System.Drawing.Size(56, 56);
+            this.LightModeImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LightModeImg.TabIndex = 5;
+            this.LightModeImg.TabStop = false;
+            // 
+            // DarkModeImg
+            // 
+            this.DarkModeImg.Image = global::Spiel.Properties.Resources.moon;
+            this.DarkModeImg.Location = new System.Drawing.Point(314, 233);
+            this.DarkModeImg.Name = "DarkModeImg";
+            this.DarkModeImg.Size = new System.Drawing.Size(56, 56);
+            this.DarkModeImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DarkModeImg.TabIndex = 7;
+            this.DarkModeImg.TabStop = false;
+            this.DarkModeImg.Visible = false;
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1246, 571);
-            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.DarkModeImg);
+            this.Controls.Add(this.LightModeImg);
+            this.Controls.Add(this.DarkModeButton);
+            this.Controls.Add(this.SchwierigkeitsSlider);
             this.Controls.Add(this.SchwierigkeitsButton);
-            this.Controls.Add(this.SettingsTonSlider);
-            this.Controls.Add(this.SettingsTonButton);
+            this.Controls.Add(this.SchriftGrößeSlider);
+            this.Controls.Add(this.SchriftGrößeButton);
             this.Name = "Settings";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Settings_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SettingsTonSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchriftGrößeSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchwierigkeitsSlider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightModeImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkModeImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,8 +139,11 @@
 
         #endregion
 
-        private Button SettingsTonButton;
-        private TrackBar trackBar1;
+        private Button SchriftGrößeButton;
+        
         private Button SchwierigkeitsButton;
+        private Button DarkModeButton;
+        private PictureBox LightModeImg;
+        private PictureBox DarkModeImg;
     }
 }
