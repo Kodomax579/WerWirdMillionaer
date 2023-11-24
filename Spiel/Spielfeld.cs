@@ -14,11 +14,12 @@ namespace Spiel
     {
         int id;
         Controller controller = new Controller();
-        Startseite Startseite = new Startseite();
+        Startseite Startseite;
 
         public Spielfeld(int SpielerID)
         {
              id = SpielerID;
+            Startseite = new Startseite(id);
             InitializeComponent();
         }
 

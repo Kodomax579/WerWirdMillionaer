@@ -105,13 +105,15 @@ namespace Spiel
 
         public bool InsertRanked(int SpielerID)
         {
-            
 
-            if (mysql.InsertHighscore(SpielerID, Zaehler))
+            if (mysql.AlreadyHighscore(SpielerID))
             {
-                return true;
+                return mysql.UpdateHighscore(SpielerID, Zaehler);
             }
-            return false;
+            else
+            {
+                return mysql.InsertHighscore(SpielerID, Zaehler);
+            }
         }
     }
 }

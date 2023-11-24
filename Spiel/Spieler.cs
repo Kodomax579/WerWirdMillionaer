@@ -50,6 +50,20 @@ namespace Spiel
             return false;
             
         }
+        public bool doppelterEintrag(TextBox name, TextBox nachname, TextBox username, TextBox email)
+        {
+            String Name = name.Text;
+            String Nachname = nachname.Text;
+            String Username = username.Text;
+            String Email = email.Text;
+            if(mysql.doppelterEintrag(Name, Nachname, Username, Email))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public int getSpielerID()
         {
             return SpielerID;
