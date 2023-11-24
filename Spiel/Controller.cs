@@ -3,19 +3,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Spiel
 {
-    internal class Controller
+    internal class Controller 
     {
         private MySQL mysql = new MySQL("localhost", "wwm", "root", "", "3306", "none");
         int ID;
         int RichtigeAntwort; 
         int Zaehler =0;
-        Spieler spieler = new Spieler();
-        int SpielerID;
+        
+       
 
         public void GetFrage(Label frage, Button antwort1, Button antwort2, Button antwort3, Button antwort4, CheckBox stufe1, CheckBox stufe2, CheckBox stufe3, CheckBox stufe4, CheckBox stufe5, CheckBox stufe6, CheckBox stufe7, CheckBox stufe8, CheckBox stufe9, CheckBox stufe10)
         {
@@ -100,12 +103,18 @@ namespace Spiel
             
         }
 
-        public void InsertRanked()
+        public bool InsertRanked(int SpielerID)
         {
-            Spieler spieler = new Spieler();
-            SpielerID = spieler.getSpielerID();
 
-            mysql.InsertHighscore(SpielerID, Zaehler);
+            if (mysql.AlreadyHighscore(SpielerID))
+            {
+                return mysql.UpdateHighscore(SpielerID, Zaehler);
+            }
+            else
+            {
+                return mysql.InsertHighscore(SpielerID, Zaehler);
+            }
         }
     }
 }
+
