@@ -12,11 +12,14 @@ namespace Spiel
 {
     public partial class Spielfeld : Form
     {
+        int id;
         Controller controller = new Controller();
-        Startseite Startseite = new Startseite();
+        Startseite Startseite;
 
-        public Spielfeld()
+        public Spielfeld(int SpielerID)
         {
+             id = SpielerID;
+            Startseite = new Startseite(id);
             InitializeComponent();
         }
 
@@ -34,9 +37,8 @@ namespace Spiel
             {
                 controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1, Stufe2, Stufe3, Stufe4, Stufe5, Stufe6, Stufe7, Stufe8, Stufe9, Stufe10);
             }
-            else if (isAnswerCorrect == true && controller.gewonnen() == false)
+            else if (isAnswerCorrect == true && controller.gewonnen() == false && controller.InsertRanked(id) == true)
             {
-                controller.InsertRanked();
 
                 MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
@@ -44,7 +46,7 @@ namespace Spiel
             }
             else
             {
-                controller.InsertRanked();
+                controller.InsertRanked(id);
 
                 MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
@@ -60,9 +62,8 @@ namespace Spiel
             {
                 controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1, Stufe2, Stufe3, Stufe4, Stufe5, Stufe6, Stufe7, Stufe8, Stufe9, Stufe10);
             }
-            else if (isAnswerCorrect == true && controller.gewonnen() == false)
+            else if (isAnswerCorrect == true && controller.gewonnen() == false && controller.InsertRanked(id) == true)
             {
-                controller.InsertRanked();
 
                 MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
@@ -70,7 +71,7 @@ namespace Spiel
             }
             else
             {
-                controller.InsertRanked();
+                controller.InsertRanked(id);
 
                 MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
@@ -86,9 +87,8 @@ namespace Spiel
             {
                 controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1, Stufe2, Stufe3, Stufe4, Stufe5, Stufe6, Stufe7, Stufe8, Stufe9, Stufe10);
             }
-            else if (isAnswerCorrect == true && controller.gewonnen() == false)
+            else if (isAnswerCorrect == true && controller.gewonnen() == false && controller.InsertRanked(id) == true)
             {
-                controller.InsertRanked();
 
                 MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
@@ -96,7 +96,7 @@ namespace Spiel
             }
             else
             {
-                controller.InsertRanked();
+                controller.InsertRanked(id);
 
                 MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
@@ -112,9 +112,8 @@ namespace Spiel
             {
                 controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1, Stufe2, Stufe3, Stufe4, Stufe5, Stufe6, Stufe7, Stufe8, Stufe9, Stufe10);
             }
-            else if (isAnswerCorrect == true && controller.gewonnen() == false)
+            else if (isAnswerCorrect == true && controller.gewonnen() == false && controller.InsertRanked(id) == true)
             {
-                controller.InsertRanked();
 
                 MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
@@ -122,7 +121,7 @@ namespace Spiel
             }
             else
             {
-                controller.InsertRanked();
+                controller.InsertRanked(id);
 
                 MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();

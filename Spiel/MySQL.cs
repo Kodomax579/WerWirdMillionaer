@@ -17,7 +17,6 @@ namespace Spiel
 
     class MySQL
     {
-        
         private MySqlConnection conn;
 
         public MySQL(string server, string database, string user, string password, string port, string sslM)
@@ -36,9 +35,8 @@ namespace Spiel
             {
                 Console.WriteLine(e.Message);
             }
-        
-        
         }
+
         public int Login(string username, string password)
         {
             string query = "SELECT * FROM spieler WHERE username = @username AND password = @password";
@@ -57,9 +55,7 @@ namespace Spiel
                     return mySqlDataReader.GetInt32(0);
                 }
             }
-
             return 0;
-
         }
 
         public bool SignUp(string Name, string Nachname, string Username, string Password, string Email)
@@ -83,8 +79,27 @@ namespace Spiel
 
             return false;
         }
+        public bool doppelterEintrag(string name, string nachname, string username, string email)
+        {
+            string query = "SELECT * FROM spieler WHERE username = @username OR name = @name OR nachname = @nachname OR email = @email";
+            MySqlCommand mySqlCommand = conn.CreateCommand();
+            mySqlCommand.CommandText = query;
 
+            // Create and add parameters to the query
+            mySqlCommand.Parameters.AddWithValue("@name", name);
+            mySqlCommand.Parameters.AddWithValue("@username", username);
+            mySqlCommand.Parameters.AddWithValue("@nachname", nachname);
+            mySqlCommand.Parameters.AddWithValue("@email", email);
 
+            using (MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader())
+            {
+                if (mySqlDataReader.Read())
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
 
         public List<string> GetFrage(int stage)
         {
@@ -115,28 +130,88 @@ namespace Spiel
             return selectedFragen;
         }
 
-        public void InsertHighscore(int SpielerID,int Stufe)
+        public bool AlreadyHighscore(int SpielerID)
         {
-            string query = "INSERT INTO `highscore`( `Stufe`, `SpielerID`) VALUES ('@Stufe','@SpielerID')";
-
+            string query = "SELECT * FROM `highscore` WHERE username = @username";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
 
-            mySqlCommand.Parameters.AddWithValue("@Stufe", Stufe);
-            mySqlCommand.Parameters.AddWithValue("@SpielerID", SpielerID);
+            // Create and add parameters to the query
+            mySqlCommand.Parameters.AddWithValue("@username", getUsername(SpielerID));
 
-            mySqlCommand.ExecuteNonQuery();
+            using (MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader())
+            {
+                return mySqlDataReader.Read();
+            }
+
+        }
+        public bool UpdateHighscore(int SpielerID, int Stufe)
+        {
+            // Erstelle die INSERT-Anweisung
+            string query = "UPDATE `highscore` SET `Stufe`=@Stufe WHERE `username` = @username";
+
+            MySqlCommand mySqlCommand = new MySqlCommand(query, conn);
+
+            string username = getUsername(SpielerID);
+            mySqlCommand.Parameters.AddWithValue("@Stufe", Stufe);
+            mySqlCommand.Parameters.AddWithValue("@username", username);
+
+            int rowsAffected = mySqlCommand.ExecuteNonQuery();
+
+            // Überprüfe das Ergebnis
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            return false;
         }
 
-        public List<string> GetRanked()
+        public bool InsertHighscore(int SpielerID, int Stufe)
+        {
+            // Erstelle die INSERT-Anweisung
+            string query = "INSERT INTO `highscore`(`Stufe`,`username`) VALUES (@Stufe, @username)";
+            
+            MySqlCommand mySqlCommand = new MySqlCommand(query, conn);
+
+            string username = getUsername(SpielerID);
+            mySqlCommand.Parameters.AddWithValue("@Stufe", Stufe);
+            mySqlCommand.Parameters.AddWithValue("@username", username);
+
+            int rowsAffected = mySqlCommand.ExecuteNonQuery();
+
+            // Überprüfe das Ergebnis
+            if (rowsAffected > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private string getUsername(int SpielerID)
+        { 
+            string query2 = "SELECT username  FROM spieler WHERE ID = @spielerID";
+            MySqlCommand mySqlCommand2 = new MySqlCommand(query2, conn);
+
+            mySqlCommand2.Parameters.AddWithValue("@spielerID", SpielerID);
+
+            using (MySqlDataReader mySqlDataReader = mySqlCommand2.ExecuteReader())
+            {
+                while (mySqlDataReader.Read())
+                {
+                    string username = mySqlDataReader.GetString(0);
+                    return username;
+                }
+            }
+            return null;
+        }
+
+        public List<string> GetRanke()
         {
             List<string> ranked = new List<string>();
 
             string query = "SELECT spieler.username From highscore JOIN spieler ON highscore.SpielerID = spieler.ID GROUP BY ASC(Stufe)";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
-
-            
 
             return ranked;
 
