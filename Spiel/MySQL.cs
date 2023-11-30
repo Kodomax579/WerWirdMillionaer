@@ -17,8 +17,12 @@ namespace Spiel
 
     class MySQL
     {
+
         private MySqlConnection conn;
 
+
+
+        //Konstruktor der die Verbindung zur Datenbank aufbaut
         public MySQL(string server, string database, string user, string password, string port, string sslM)
         {
             string connString =
@@ -37,6 +41,9 @@ namespace Spiel
             }
         }
 
+        //
+        // LOGIN
+        //
         public int Login(string username, string password)
         {
             string query = "SELECT * FROM spieler WHERE username = @username AND password = @password";
@@ -58,6 +65,9 @@ namespace Spiel
             return 0;
         }
 
+        //
+        // Regristrieren
+        //
         public bool SignUp(string Name, string Nachname, string Username, string Password, string Email)
         {
             string query = "INSERT INTO `spieler`(`name`, `nachname`, `username`, `password`, `email`) VALUES (@name, @nachname, @username, @password, @email)";
@@ -79,6 +89,10 @@ namespace Spiel
 
             return false;
         }
+
+        //
+        // Gucken ob der Regristrierende sich schonmal regriestriert hat
+        //
         public bool doppelterEintrag(string name, string nachname, string username, string email)
         {
             string query = "SELECT * FROM spieler WHERE username = @username OR name = @name OR nachname = @nachname OR email = @email";
@@ -101,14 +115,25 @@ namespace Spiel
             }
         }
 
+        //
+        // Fragen aus der Datenbank holen
+        //
         public List<string> GetFrage(int stage)
         {
+            //Liste Initalisieren
             List<string> selectedFragen = new List<string>();
-            string query = "SELECT ID,`Frage`, `Antwort 1`, `Antwort 2`, `Antwort 3`, `Antwort 4`,`Richtige Antwort` FROM `fragen` WHERE Schwierigkeit = @schwierigkeit";
-            MySqlCommand mySqlCommand = conn.CreateCommand();
-            mySqlCommand.CommandText = query;
 
+            // Datenbank Code der Mitgeschickt wird
+            string query = "SELECT ID,`Frage`, `Antwort 1`, `Antwort 2`, `Antwort 3`, `Antwort 4`,`Richtige Antwort` FROM `fragen` WHERE Schwierigkeit = @schwierigkeit";
+
+            // Verbindung aufbauen, damit ein befehl geschickt werden kann
+            MySqlCommand mySqlCommand = conn.CreateCommand();
+
+            // Befehl geben
+            mySqlCommand.CommandText = query;
+            // Daten hinzufügne. (Gegen SQL injection)
             mySqlCommand.Parameters.AddWithValue("@schwierigkeit", stage);
+
 
             using (MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader())
             {
@@ -130,9 +155,10 @@ namespace Spiel
             return selectedFragen;
         }
 
-        public bool AlreadyHighscore(int SpielerID)
+        // Guckt ob der User schon einen Highscore hat
+        public int AlreadyHighscore(int SpielerID)
         {
-            string query = "SELECT * FROM `highscore` WHERE username = @username";
+            string query = "SELECT Stufe,username FROM `highscore` WHERE username = @username";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
 
@@ -141,13 +167,18 @@ namespace Spiel
 
             using (MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader())
             {
-                return mySqlDataReader.Read();
+                while (mySqlDataReader.Read())
+                {
+                    return mySqlDataReader.GetInt32(0);
+                }
+                return 0;
             }
 
         }
+
+        // Highscore Updaten
         public bool UpdateHighscore(int SpielerID, int Stufe)
         {
-            // Erstelle die INSERT-Anweisung
             string query = "UPDATE `highscore` SET `Stufe`=@Stufe WHERE `username` = @username";
 
             MySqlCommand mySqlCommand = new MySqlCommand(query, conn);
@@ -166,6 +197,7 @@ namespace Spiel
             return false;
         }
 
+        //Highscore Hinzufügen
         public bool InsertHighscore(int SpielerID, int Stufe)
         {
             // Erstelle die INSERT-Anweisung
@@ -187,6 +219,7 @@ namespace Spiel
             return false;
         }
 
+        // Username vom Spieler bekommen
         private string getUsername(int SpielerID)
         { 
             string query2 = "SELECT username  FROM spieler WHERE ID = @spielerID";

@@ -105,11 +105,13 @@ namespace Spiel
 
         public bool InsertRanked(int SpielerID)
         {
-
-            if (mysql.AlreadyHighscore(SpielerID))
+            int stufe = mysql.AlreadyHighscore(SpielerID);
+            if (stufe > 0 && stufe > Zaehler)
             {
                 return mysql.UpdateHighscore(SpielerID, Zaehler);
             }
+            else if(stufe > 0 && stufe < Zaehler)
+            { return true; }
             else
             {
                 return mysql.InsertHighscore(SpielerID, Zaehler);
@@ -117,4 +119,3 @@ namespace Spiel
         }
     }
 }
-
