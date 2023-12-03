@@ -220,7 +220,7 @@ namespace Spiel
         }
 
         // Username vom Spieler bekommen
-        private string getUsername(int SpielerID)
+        public string getUsername(int SpielerID)
         { 
             string query2 = "SELECT username  FROM spieler WHERE ID = @spielerID";
             MySqlCommand mySqlCommand2 = new MySqlCommand(query2, conn);
@@ -238,13 +238,54 @@ namespace Spiel
             return null;
         }
 
-        public List<string> GetRanke()
+        public List<string> GetAllRanking()
         {
             List<string> ranked = new List<string>();
 
-            string query = "SELECT spieler.username From highscore JOIN spieler ON highscore.SpielerID = spieler.ID GROUP BY ASC(Stufe)";
+            string Stufe,username,datensatz;
+
+
+            string query = "SELECT username,Stufe From highscore ORDER BY Stufe DESC";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
+
+            using(MySqlDataReader mySqlDataReader1 = mySqlCommand.ExecuteReader())
+            {
+                while (mySqlDataReader1.Read())
+                {
+                    username = mySqlDataReader1.GetString(0);
+                    Stufe = mySqlDataReader1.GetString(1);
+
+                    datensatz = $"{username} Stufe: {Stufe}";
+                    ranked.Add(datensatz);
+                }
+            }
+
+            return ranked;
+
+        }
+        public List<string> GetOwnRank()
+        {
+            List<string> ranked = new List<string>();
+
+            string Stufe, username, datensatz;
+
+
+            string query = "SELECT username,Stufe From highscore ORDER BY Stufe DESC";
+            MySqlCommand mySqlCommand = conn.CreateCommand();
+            mySqlCommand.CommandText = query;
+
+            using (MySqlDataReader mySqlDataReader1 = mySqlCommand.ExecuteReader())
+            {
+                while (mySqlDataReader1.Read())
+                {
+                    username = mySqlDataReader1.GetString(0);
+                    Stufe = mySqlDataReader1.GetString(1);
+
+                    datensatz = $"{username},{Stufe}";
+                    ranked.Add(datensatz);
+                }
+            }
 
             return ranked;
 

@@ -98,20 +98,70 @@ namespace Spiel
             }
         }
 
-        public void getranked(Label erster, Label zweiter, Label dritter, Label meinPlatz)
+        public void getranking(Label erster, Label zweiter, Label dritter)
         {
+            List<string> ranked = mysql.GetAllRanking();
             
+            switch(ranked.Count)
+            {
+                case 0:
+                    erster.Text = "Kein Spieler";
+                    zweiter.Text = "Kein Spieler";
+                    dritter.Text = "Kein Spieler";
+                    break;
+                case 1:
+                    erster.Text = ranked[0];
+                    zweiter.Text = "Kein Spieler";
+                    dritter.Text = "Kein Spieler";
+                    break;
+                case 2:
+                    erster.Text = ranked[0];
+                    zweiter.Text = ranked[1];
+                    dritter.Text = "Kein Spieler";
+                    break;
+                case 3:
+                    erster.Text = ranked[0];
+                    zweiter.Text= ranked[1];
+                    dritter.Text= ranked[2];
+                    break;
+            }
         }
 
-        public bool InsertRanked(int SpielerID)
+        public void getOwnrank(Label meinPlatz, int SpielerID)
+        {
+            List<string> ranked = mysql.GetOwnRank();
+            int rankZaehler = 0;
+
+            for (int i = 0; i < ranked.Count; i++)
+            {
+                rankZaehler++;
+                string list = ranked[i];
+                string[] ranklist = list.Split(',');
+
+                string Rank = ranklist[0].Trim();
+               string Stufe = ranklist[1].Trim();
+
+                if (Rank == mysql.getUsername(SpielerID))
+                {
+                    meinPlatz.Text = "Platz:" + rankZaehler + " Stufe:" +Stufe;
+                    break; // Exit the loop once the player is found
+                }
+            }
+        }
+
+
+        public bool InsertRanked(int SpielerID, String time)
         {
             int stufe = mysql.AlreadyHighscore(SpielerID);
-            if (stufe > 0 && stufe > Zaehler)
+
+            
+            if (stufe > 0 && stufe < Zaehler)
             {
                 return mysql.UpdateHighscore(SpielerID, Zaehler);
             }
-            else if(stufe > 0 && stufe < Zaehler)
-            { return true; }
+            else if(stufe > 0 && stufe > Zaehler)
+            { 
+                return true; }
             else
             {
                 return mysql.InsertHighscore(SpielerID, Zaehler);

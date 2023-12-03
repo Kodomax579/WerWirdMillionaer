@@ -37,13 +37,14 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(346, 50);
+            label1.Location = new Point(346, 51);
             label1.Name = "label1";
             label1.Size = new Size(130, 38);
             label1.TabIndex = 0;
@@ -54,7 +55,7 @@
             // 
             erster.AutoSize = true;
             erster.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            erster.Location = new Point(356, 228);
+            erster.Location = new Point(346, 233);
             erster.Name = "erster";
             erster.Size = new Size(63, 25);
             erster.TabIndex = 1;
@@ -64,7 +65,7 @@
             // 
             zweiter.AutoSize = true;
             zweiter.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            zweiter.Location = new Point(216, 309);
+            zweiter.Location = new Point(198, 319);
             zweiter.Name = "zweiter";
             zweiter.Size = new Size(63, 25);
             zweiter.TabIndex = 2;
@@ -74,7 +75,7 @@
             // 
             dritter.AutoSize = true;
             dritter.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dritter.Location = new Point(479, 330);
+            dritter.Location = new Point(453, 331);
             dritter.Name = "dritter";
             dritter.Size = new Size(63, 25);
             dritter.TabIndex = 3;
@@ -84,7 +85,7 @@
             // 
             MeinPlatz.AutoSize = true;
             MeinPlatz.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            MeinPlatz.Location = new Point(650, 330);
+            MeinPlatz.Location = new Point(633, 331);
             MeinPlatz.Name = "MeinPlatz";
             MeinPlatz.Size = new Size(93, 25);
             MeinPlatz.TabIndex = 4;
@@ -93,6 +94,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = SystemColors.ActiveCaption;
             label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(650, 293);
             label6.Name = "label6";
@@ -103,6 +105,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = SystemColors.ActiveCaption;
             label7.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(479, 293);
             label7.Name = "label7";
@@ -113,6 +116,7 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.BackColor = SystemColors.ActiveCaption;
             label8.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(216, 272);
             label8.Name = "label8";
@@ -123,18 +127,31 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.BackColor = SystemColors.ActiveCaption;
             label9.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(356, 191);
+            label9.Location = new Point(357, 191);
             label9.Name = "label9";
             label9.Size = new Size(63, 25);
             label9.TabIndex = 5;
             label9.Text = "1.Platz";
             // 
+            // button1
+            // 
+            button1.Location = new Point(327, 397);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(151, 47);
+            button1.TabIndex = 9;
+            button1.Text = "Startseite";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Rangliste
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(827, 478);
+            ClientSize = new Size(827, 477);
+            Controls.Add(button1);
             Controls.Add(label6);
             Controls.Add(label7);
             Controls.Add(label8);
@@ -162,5 +179,6 @@
         private Label label7;
         private Label label8;
         private Label label9;
+        private Button button1;
     }
 }

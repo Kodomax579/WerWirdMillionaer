@@ -17,9 +17,9 @@ namespace Spiel
         {
             ID = SpielerID;
             InitializeComponent();
-            
+
         }
-       
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -28,16 +28,12 @@ namespace Spiel
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
             Settings set = new Settings();
             this.Close();
             set.Show();
-
         }
+
+      
 
         private void Startseite_Load(object sender, EventArgs e)
         {
@@ -54,6 +50,13 @@ namespace Spiel
             Spielfeld spiel = new Spielfeld(ID);
             this.Close();
             spiel.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Rangliste ra = new Rangliste(ID);
+            this.Close();
+            ra.Show();
         }
     }
 }
