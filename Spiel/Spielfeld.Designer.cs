@@ -45,6 +45,7 @@
             Stufe10 = new CheckBox();
             Stufe9 = new CheckBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            button1 = new Button();
             SuspendLayout();
             // 
             // Antwort1
@@ -212,11 +213,22 @@
             // 
             timer1.Interval = 1000;
             // 
+            // button1
+            // 
+            button1.Location = new Point(12, 416);
+            button1.Name = "button1";
+            button1.Size = new Size(89, 22);
+            button1.TabIndex = 15;
+            button1.Text = "Startseite";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Spielfeld
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(Stufe10);
             Controls.Add(Stufe9);
             Controls.Add(Stufe8);
@@ -257,5 +269,6 @@
         private CheckBox Stufe10;
         private CheckBox Stufe9;
         private System.Windows.Forms.Timer timer1;
+        private Button button1;
     }
 }

@@ -105,6 +105,7 @@
             passwort.Name = "passwort";
             passwort.Size = new Size(248, 23);
             passwort.TabIndex = 15;
+            passwort.UseSystemPasswordChar = true;
             // 
             // username
             // 
