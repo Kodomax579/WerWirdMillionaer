@@ -11,6 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Xml.Linq;
 using System.Collections;
+using MySqlX.XDevAPI;
 
 namespace Spiel
 {
@@ -156,9 +157,9 @@ namespace Spiel
         }
 
         // Guckt ob der User schon einen Highscore hat
-        public int AlreadyHighscore(int SpielerID)
+        public bool AlreadyHighscore(int SpielerID, int stufe, int time)
         {
-            string query = "SELECT Stufe,username FROM `highscore` WHERE username = @username";
+            string query = "SELECT Stufe,time FROM `highscore` WHERE username = @username";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
 
@@ -169,22 +170,49 @@ namespace Spiel
             {
                 while (mySqlDataReader.Read())
                 {
-                    return mySqlDataReader.GetInt32(0);
+                    if (mySqlDataReader.GetInt32(0) < stufe)
+                    {
+                        mySqlDataReader.Close();
+                        return UpdateHighscore(SpielerID, stufe, time);
+                    }
+                    else if (mySqlDataReader.GetInt32(0) == stufe && mySqlDataReader.GetInt32(1) > time)
+                    {
+                        mySqlDataReader.Close();
+                        return UpdateHighscore(SpielerID, stufe, time);
+                    }
+                    else if(mySqlDataReader.GetInt32(0) > stufe)
+                    {
+                        mySqlDataReader.Close();
+                        return true;
+                    }
+                    else if (mySqlDataReader.GetInt32(0) == stufe && mySqlDataReader.GetInt32(1) < time)
+                    {
+                        mySqlDataReader.Close();
+                        return true;
+                    }
+                    else
+                    {
+                        mySqlDataReader.Close();
+                        return InsertHighscore(SpielerID,stufe,time);
+                    }
                 }
-                return 0;
+                return false;
             }
 
         }
 
+        
+
         // Highscore Updaten
-        public bool UpdateHighscore(int SpielerID, int Stufe)
+        public bool UpdateHighscore(int SpielerID, int Stufe, int time)
         {
-            string query = "UPDATE `highscore` SET `Stufe`=@Stufe WHERE `username` = @username";
+            string query = "UPDATE `highscore` SET `Stufe`=@Stufe, `Time`=@time WHERE `username` = @username";
 
             MySqlCommand mySqlCommand = new MySqlCommand(query, conn);
 
             string username = getUsername(SpielerID);
             mySqlCommand.Parameters.AddWithValue("@Stufe", Stufe);
+            mySqlCommand.Parameters.AddWithValue("@time", time);
             mySqlCommand.Parameters.AddWithValue("@username", username);
 
             int rowsAffected = mySqlCommand.ExecuteNonQuery();
@@ -198,16 +226,17 @@ namespace Spiel
         }
 
         //Highscore Hinzufügen
-        public bool InsertHighscore(int SpielerID, int Stufe)
+        public bool InsertHighscore(int SpielerID, int Stufe, int time)
         {
             // Erstelle die INSERT-Anweisung
-            string query = "INSERT INTO `highscore`(`Stufe`,`username`) VALUES (@Stufe, @username)";
+            string query = "INSERT INTO `highscore`(`Stufe`,`username`,`Time`) VALUES (@Stufe, @username, @time)";
             
             MySqlCommand mySqlCommand = new MySqlCommand(query, conn);
 
             string username = getUsername(SpielerID);
             mySqlCommand.Parameters.AddWithValue("@Stufe", Stufe);
             mySqlCommand.Parameters.AddWithValue("@username", username);
+            mySqlCommand.Parameters.AddWithValue("@time", time);
 
             int rowsAffected = mySqlCommand.ExecuteNonQuery();
 

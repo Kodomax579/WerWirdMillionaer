@@ -15,7 +15,7 @@ namespace Spiel
     public partial class Spielfeld : Form
     {
         int id;
-        string time;
+        int time;
         Stopwatch sw = new Stopwatch();
         Controller controller = new Controller();
         Startseite Startseite;
@@ -47,10 +47,7 @@ namespace Spiel
                 else
                 {
                     sw.Stop();
-                    TimeSpan ts = sw.Elapsed;
-                    time = String.Format("{0:00}:{1:00}.{2:00}",
-                        ts.Minutes, ts.Seconds,
-                        ts.Milliseconds / 10);
+                    time = (int)sw.Elapsed.TotalMilliseconds;
                     controller.InsertRanked(id,time);
 
                     MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -61,13 +58,11 @@ namespace Spiel
             else
             {
                 sw.Stop();
-                TimeSpan ts = sw.Elapsed;
-                time = String.Format("{0:00}:{1:00}.{2:00}",
-                    ts.Minutes, ts.Seconds,
-                    ts.Milliseconds / 10);
+                time = (int)sw.Elapsed.TotalMilliseconds;
                 controller.InsertRanked(id, time);
+                // controller.InsertRanked(id, time);
 
-                MessageBox.Show(time, "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
             }
@@ -86,10 +81,8 @@ namespace Spiel
                 else
                 {
                     sw.Stop();
-                    TimeSpan ts = sw.Elapsed;
-                    time = String.Format("{0:00}:{1:00}.{2:00}",
-                        ts.Minutes, ts.Seconds,
-                        ts.Milliseconds / 10);
+                    time = (int)sw.Elapsed.TotalMilliseconds;
+                    
                     controller.InsertRanked(id, time);
 
                     MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -100,13 +93,10 @@ namespace Spiel
             else
             {
                 sw.Stop();
-                TimeSpan ts = sw.Elapsed;
-                time = String.Format("{0:00}:{1:00}.{2:00}",
-                    ts.Minutes, ts.Seconds,
-                    ts.Milliseconds / 10);
+                time = (int)sw.Elapsed.TotalMilliseconds;
                 controller.InsertRanked(id, time);
 
-                MessageBox.Show(time, "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
             }
@@ -125,10 +115,7 @@ namespace Spiel
                 else
                 {
                     sw.Stop();
-                    TimeSpan ts = sw.Elapsed;
-                    time = String.Format("{0:00}:{1:00}.{2:00}",
-                        ts.Minutes, ts.Seconds,
-                        ts.Milliseconds / 10);
+                    time = (int)sw.Elapsed.TotalMilliseconds;
                     controller.InsertRanked(id, time);
 
                     MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -139,13 +126,10 @@ namespace Spiel
             else
             {
                 sw.Stop();
-                TimeSpan ts = sw.Elapsed;
-                time = String.Format("{0:00}:{1:00}.{2:00}",
-                    ts.Minutes, ts.Seconds,
-                    ts.Milliseconds / 10);
+                time = (int)sw.Elapsed.TotalMilliseconds;
                 controller.InsertRanked(id, time);
 
-                MessageBox.Show(time, "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
             }
@@ -164,10 +148,7 @@ namespace Spiel
                 else
                 {
                     sw.Stop();
-                    TimeSpan ts = sw.Elapsed;
-                    time = String.Format("{0:00}:{1:00}.{2:00}",
-                        ts.Minutes, ts.Seconds,
-                        ts.Milliseconds / 10);
+                    time = (int)sw.Elapsed.TotalMilliseconds;
                     controller.InsertRanked(id, time);
 
                     MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -178,13 +159,10 @@ namespace Spiel
             else
             {
                 sw.Stop();
-                TimeSpan ts = sw.Elapsed;
-                time = String.Format("{0:00}:{1:00}.{2:00}",
-                    ts.Minutes, ts.Seconds,
-                    ts.Milliseconds / 10);
+                time = (int)sw.Elapsed.TotalMilliseconds;
                 controller.InsertRanked(id, time);
 
-                MessageBox.Show(time, "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
             }
