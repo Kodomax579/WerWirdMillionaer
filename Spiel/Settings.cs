@@ -156,7 +156,7 @@ namespace Spiel
 
         }
 
-        private void LightModeImg_Load(object sender, EventArgs e)
+        /*private void LightModeImg_Load(object sender, EventArgs e)
         {
             string imagePath = "path/to/your/image.png"; // Replace with the actual path to your PNG image
 
@@ -173,5 +173,6 @@ namespace Spiel
                     }
                 }
             }
+        }*/
     }
 }
