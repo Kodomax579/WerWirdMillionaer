@@ -13,9 +13,10 @@ namespace Spiel
     public partial class Rangliste : Form
     {
         Controller controller = new Controller();
-
-        public Rangliste()
+        int SpielerID;
+        public Rangliste(int ID)
         {
+            SpielerID = ID;
             InitializeComponent();
         }
 
@@ -26,7 +27,15 @@ namespace Spiel
 
         private void Rangliste_Load(object sender, EventArgs e)
         {
-            controller.getranked(erster, zweiter, dritter, MeinPlatz);
+            controller.getranking(erster, zweiter, dritter);
+            controller.getOwnrank(MeinPlatz, SpielerID);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Startseite Startseite = new Startseite(SpielerID);
+            Startseite.Show();
+            this.Close();
         }
     }
 }

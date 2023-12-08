@@ -98,23 +98,65 @@ namespace Spiel
             }
         }
 
-        public void getranked(Label erster, Label zweiter, Label dritter, Label meinPlatz)
+        public void getranking(Label erster, Label zweiter, Label dritter)
         {
+            List<string> ranked = mysql.GetAllRanking();
             
+            switch(ranked.Count)
+            {
+                case 0:
+                    erster.Text = "Kein Spieler";
+                    zweiter.Text = "Kein Spieler";
+                    dritter.Text = "Kein Spieler";
+                    break;
+                case 1:
+                    erster.Text = ranked[0];
+                    zweiter.Text = "Kein Spieler";
+                    dritter.Text = "Kein Spieler";
+                    break;
+                case 2:
+                    erster.Text = ranked[0];
+                    zweiter.Text = ranked[1];
+                    dritter.Text = "Kein Spieler";
+                    break;
+                case 3:
+                    erster.Text = ranked[0];
+                    zweiter.Text= ranked[1];
+                    dritter.Text= ranked[2];
+                    break;
+            }
         }
 
-        public bool InsertRanked(int SpielerID)
+        public void getOwnrank(Label meinPlatz, int SpielerID)
         {
+            List<string> ranked = mysql.GetOwnRank();
+            int rankZaehler = 0;
 
-            if (mysql.AlreadyHighscore(SpielerID))
+            for (int i = 0; i < ranked.Count; i++)
             {
-                return mysql.UpdateHighscore(SpielerID, Zaehler);
+                rankZaehler++;
+                string list = ranked[i];
+                string[] ranklist = list.Split(',');
+
+                string Rank = ranklist[0].Trim();
+               string Stufe = ranklist[1].Trim();
+
+                if (Rank == mysql.getUsername(SpielerID))
+                {
+                    meinPlatz.Text = "Platz:" + rankZaehler + " Stufe:" +Stufe;
+                    break; // Exit the loop once the player is found
+                }
             }
-            else
+        }
+
+
+        public bool InsertRanked(int SpielerID, int time)
+        {
+           if(mysql.AlreadyHighscore(SpielerID,Zaehler,time))
             {
-                return mysql.InsertHighscore(SpielerID, Zaehler);
+                return true;
             }
+           return false;
         }
     }
 }
-

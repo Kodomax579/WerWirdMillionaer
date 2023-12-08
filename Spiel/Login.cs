@@ -3,8 +3,8 @@ namespace Spiel
     public partial class Login : Form
     {
         public Login()
-        { 
-      
+        {
+
             InitializeComponent();
         }
 
@@ -32,17 +32,22 @@ namespace Spiel
         private void button2_Click(object sender, EventArgs e)
         {
             Spieler controlling = new Spieler();
-            
+
 
             int ID = controlling.login(username, password);
             if (ID > 0)
             {
 
                 Startseite set = new Startseite(controlling.getSpielerID());
-                
+
                 this.Hide();
                 set.Show();
-            }            
+            }
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
