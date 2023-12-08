@@ -155,5 +155,23 @@ namespace Spiel
         {
 
         }
+
+        private void LightModeImg_Load(object sender, EventArgs e)
+        {
+            string imagePath = "path/to/your/image.png"; // Replace with the actual path to your PNG image
+
+            try
+            {
+                // Check if the file exists
+                if (System.IO.File.Exists(imagePath))
+                {
+                    // Load the image
+                    using (Bitmap bmp = new Bitmap(imagePath))
+                    {
+                        // Display the image in the PictureBox
+                        pictureBox1.Image = new Bitmap(bmp);
+                    }
+                }
+            }
     }
 }

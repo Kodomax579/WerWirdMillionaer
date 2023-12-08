@@ -101,6 +101,7 @@
             this.LightModeImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LightModeImg.TabIndex = 5;
             this.LightModeImg.TabStop = false;
+            
             // 
             // DarkModeImg
             // 
