@@ -27,6 +27,7 @@ namespace Spiel
 
         private void Rangliste_Load(object sender, EventArgs e)
         {
+            
             controller.getranking(erster, zweiter, dritter);
             controller.getOwnrank(MeinPlatz, SpielerID);
         }
@@ -36,6 +37,11 @@ namespace Spiel
             Startseite Startseite = new Startseite(SpielerID);
             Startseite.Show();
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
