@@ -35,6 +35,7 @@
             password = new TextBox();
             label3 = new Label();
             button3 = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -100,7 +101,7 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(737, 392);
+            button3.Location = new Point(734, 392);
             button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
             button3.Size = new Size(130, 31);
@@ -109,11 +110,22 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(32, 392);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 31);
+            button1.TabIndex = 9;
+            button1.Text = "Als Gast Spielen";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(961, 464);
+            Controls.Add(button1);
             Controls.Add(button3);
             Controls.Add(label3);
             Controls.Add(password);
@@ -136,5 +148,6 @@
         private TextBox password;
         private Label label3;
         private Button button3;
+        private Button button1;
     }
 }

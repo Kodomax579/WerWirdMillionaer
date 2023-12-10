@@ -42,9 +42,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(446, 29);
+            label1.Location = new Point(504, 9);
             label1.Name = "label1";
-            label1.Size = new Size(139, 41);
+            label1.Size = new Size(111, 32);
             label1.TabIndex = 0;
             label1.Text = "Rangliste";
             label1.Click += label1_Click;
@@ -53,9 +53,9 @@
             // 
             erster.AutoSize = true;
             erster.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            erster.Location = new Point(455, 114);
+            erster.Location = new Point(492, 52);
             erster.Name = "erster";
-            erster.Size = new Size(97, 38);
+            erster.Size = new Size(75, 30);
             erster.TabIndex = 1;
             erster.Text = "1.Platz";
             // 
@@ -63,9 +63,9 @@
             // 
             zweiter.AutoSize = true;
             zweiter.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            zweiter.Location = new Point(199, 205);
+            zweiter.Location = new Point(250, 124);
             zweiter.Name = "zweiter";
-            zweiter.Size = new Size(97, 38);
+            zweiter.Size = new Size(75, 30);
             zweiter.TabIndex = 2;
             zweiter.Text = "2.Platz";
             // 
@@ -73,9 +73,9 @@
             // 
             dritter.AutoSize = true;
             dritter.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dritter.Location = new Point(692, 228);
+            dritter.Location = new Point(704, 161);
             dritter.Name = "dritter";
-            dritter.Size = new Size(97, 38);
+            dritter.Size = new Size(75, 30);
             dritter.TabIndex = 3;
             dritter.Text = "3.Platz";
             // 
@@ -83,29 +83,28 @@
             // 
             MeinPlatz.AutoSize = true;
             MeinPlatz.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            MeinPlatz.Location = new Point(862, 402);
+            MeinPlatz.Location = new Point(895, 354);
             MeinPlatz.Name = "MeinPlatz";
-            MeinPlatz.Size = new Size(147, 38);
+            MeinPlatz.Size = new Size(106, 30);
             MeinPlatz.TabIndex = 4;
-            MeinPlatz.Text = "Mein Platz";
+            MeinPlatz.Text = "Kein Platz";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.BackColor = SystemColors.ActiveCaption;
+            label6.BackColor = SystemColors.ButtonFace;
             label6.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(878, 330);
+            label6.Location = new Point(895, 295);
             label6.Name = "label6";
-            label6.Size = new Size(147, 38);
+            label6.Size = new Size(120, 30);
             label6.TabIndex = 8;
-            label6.Text = "Mein Platz";
+            label6.Text = "Platzierung";
             // 
             // button1
             // 
-            button1.Location = new Point(432, 528);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(519, 548);
             button1.Name = "button1";
-            button1.Size = new Size(151, 47);
+            button1.Size = new Size(132, 35);
             button1.TabIndex = 9;
             button1.Text = "Startseite";
             button1.UseVisualStyleBackColor = true;
@@ -113,11 +112,11 @@
             // 
             // Rangliste
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(1098, 619);
+            ClientSize = new Size(1100, 627);
             Controls.Add(button1);
             Controls.Add(label6);
             Controls.Add(MeinPlatz);
@@ -126,6 +125,7 @@
             Controls.Add(erster);
             Controls.Add(label1);
             DoubleBuffered = true;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Rangliste";
             Text = "Rangliste";
             Load += Rangliste_Load;

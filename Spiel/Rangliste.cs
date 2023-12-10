@@ -12,7 +12,7 @@ namespace Spiel
 {
     public partial class Rangliste : Form
     {
-        Controller controller = new Controller();
+        ControllerRangliste controller = new ControllerRangliste();
         int SpielerID;
         public Rangliste(int ID)
         {
@@ -27,7 +27,6 @@ namespace Spiel
 
         private void Rangliste_Load(object sender, EventArgs e)
         {
-            
             controller.getranking(erster, zweiter, dritter);
             controller.getOwnrank(MeinPlatz, SpielerID);
         }
