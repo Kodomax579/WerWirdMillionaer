@@ -15,13 +15,9 @@ using MySqlX.XDevAPI;
 
 namespace Spiel
 {
-
     class MySQL
     {
-
         private MySqlConnection conn;
-
-
 
         //Konstruktor der die Verbindung zur Datenbank aufbaut
         public MySQL(string server, string database, string user, string password, string port, string sslM)
@@ -201,8 +197,6 @@ namespace Spiel
 
         }
 
-        
-
         // Highscore Updaten
         public bool UpdateHighscore(int SpielerID, int Stufe, int time)
         {
@@ -271,10 +265,10 @@ namespace Spiel
         {
             List<string> ranked = new List<string>();
 
-            string Stufe,username,datensatz;
+            string Stufe,username,datensatz,Time;
+            double time;
 
-
-            string query = "SELECT username,Stufe From highscore ORDER BY Stufe DESC";
+            string query = "SELECT username,Stufe,Time From highscore ORDER BY Stufe DESC, Time ASC";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
 
@@ -284,23 +278,25 @@ namespace Spiel
                 {
                     username = mySqlDataReader1.GetString(0);
                     Stufe = mySqlDataReader1.GetString(1);
+                    time = mySqlDataReader1.GetInt32(2);
+                    time = time / 1000;
+                    Time = time.ToString();
+                    Time = Time.Remove(Time.Length - 1);
 
-                    datensatz = $"{username} Stufe: {Stufe}";
+                    datensatz = $"{username} \nStufe: {Stufe} \nZeit: {Time}";
                     ranked.Add(datensatz);
                 }
             }
-
             return ranked;
-
         }
         public List<string> GetOwnRank()
         {
             List<string> ranked = new List<string>();
 
-            string Stufe, username, datensatz;
+            string Stufe, username, datensatz, Time;
+            double time;
 
-
-            string query = "SELECT username,Stufe From highscore ORDER BY Stufe DESC";
+            string query = "SELECT username,Stufe,Time From highscore ORDER BY Stufe DESC, Time ASC";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
 
@@ -310,14 +306,16 @@ namespace Spiel
                 {
                     username = mySqlDataReader1.GetString(0);
                     Stufe = mySqlDataReader1.GetString(1);
+                    time = mySqlDataReader1.GetInt32(2);
+                    time = time / 1000;
+                    Time = time.ToString();
+                    Time = Time.Remove(Time.Length - 1);
 
-                    datensatz = $"{username},{Stufe}";
+                    datensatz = $"{username}:{Stufe}: {Time}";
                     ranked.Add(datensatz);
                 }
             }
-
             return ranked;
-
         }
     }
 }

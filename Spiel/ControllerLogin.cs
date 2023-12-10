@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Spiel
 {
-    class Spieler
+    class ControllerLogin
     {
         // This should be a class member variable, not a local variable
 
