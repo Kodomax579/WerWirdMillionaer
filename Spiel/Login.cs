@@ -55,14 +55,7 @@ namespace Spiel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Startseite set = new Startseite(0);
-            this.Hide();
-            set.Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Startseite set = new Startseite(-1);
+            Startseite set = new Startseite();
             this.Hide();
             set.Show();
         }
