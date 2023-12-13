@@ -166,7 +166,7 @@ namespace Spiel
             {
                 while (mySqlDataReader.Read())
                 {
-                    if (mySqlDataReader.GetInt32(0) > stufe)
+                    if (mySqlDataReader.GetInt32(0) < stufe)
                     {
                         mySqlDataReader.Close();
                         return UpdateHighscore(SpielerID, stufe, time);
@@ -275,7 +275,7 @@ namespace Spiel
                     Time = time.ToString();
                     Time = Time.Remove(Time.Length - 1);
 
-                    datensatz = $"{username} \nStufe: {Stufe} \nZeit: {Time}";
+                    datensatz = $"{username}  Stufe: {Stufe}  Zeit: {Time}";
                     ranked.Add(datensatz);
                 }
             }

@@ -96,9 +96,9 @@ namespace Spiel
                 this.Close();
         }
 
-        private void CorrectAnswerOnline(int ButtonNumber)
+        private async void CorrectAnswerOnline(int ButtonNumber)
         {
-            bool isAnswerCorrect = controller.Antwort(ButtonNumber, Antwort1, Antwort2, Antwort3, Antwort4);
+            bool isAnswerCorrect = await controller.Antwort(ButtonNumber, Antwort1, Antwort2, Antwort3, Antwort4);
 
             if (isAnswerCorrect)
             {
@@ -128,7 +128,7 @@ namespace Spiel
                 Startseite.Show();
                 this.Close();
             }
-            Startseite.GetandSetScore("Kein Score");
+           
         }
 
         private async void CorrectAnswerOffline(int ButtonNumber)

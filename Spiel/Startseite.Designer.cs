@@ -34,24 +34,27 @@
             button3 = new Button();
             button4 = new Button();
             label2 = new Label();
+            listBox1 = new ListBox();
+            label3 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(384, 43);
+            label1.Location = new Point(336, 32);
             label1.Name = "label1";
-            label1.Size = new Size(259, 41);
+            label1.Size = new Size(209, 32);
             label1.TabIndex = 0;
             label1.Text = "Wer wird Millionär";
             label1.Click += label1_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(416, 355);
+            button1.Location = new Point(364, 271);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(200, 43);
+            button1.Size = new Size(175, 32);
             button1.TabIndex = 1;
             button1.Text = "Neues Spiel";
             button1.UseVisualStyleBackColor = true;
@@ -59,9 +62,10 @@
             // 
             // button2
             // 
-            button2.Location = new Point(416, 427);
+            button2.Location = new Point(364, 320);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(200, 43);
+            button2.Size = new Size(175, 32);
             button2.TabIndex = 2;
             button2.Text = "Optionen";
             button2.UseVisualStyleBackColor = true;
@@ -69,9 +73,10 @@
             // 
             // button3
             // 
-            button3.Location = new Point(416, 495);
+            button3.Location = new Point(364, 371);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(200, 43);
+            button3.Size = new Size(175, 32);
             button3.TabIndex = 3;
             button3.Text = "Rangliste";
             button3.UseVisualStyleBackColor = true;
@@ -79,9 +84,10 @@
             // 
             // button4
             // 
-            button4.Location = new Point(37, 495);
+            button4.Location = new Point(32, 371);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(200, 43);
+            button4.Size = new Size(175, 32);
             button4.TabIndex = 4;
             button4.Text = "Ausloggen";
             button4.UseVisualStyleBackColor = true;
@@ -90,23 +96,47 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(793, 165);
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(690, 32);
             label2.Name = "label2";
-            label2.Size = new Size(50, 20);
+            label2.Size = new Size(63, 25);
             label2.TabIndex = 5;
             label2.Text = "label2";
             // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(32, 32);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(186, 229);
+            listBox1.TabIndex = 6;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(68, 4);
+            label3.Name = "label3";
+            label3.Size = new Size(97, 25);
+            label3.TabIndex = 7;
+            label3.Text = "Highscore";
+            // 
             // Startseite
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1085, 607);
+            ClientSize = new Size(949, 455);
+            Controls.Add(label3);
+            Controls.Add(listBox1);
             Controls.Add(label2);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Startseite";
             Text = "Startseite";
             Load += Startseite_Load;
@@ -122,5 +152,7 @@
         private Button button3;
         private Button button4;
         private Label label2;
+        private ListBox listBox1;
+        private Label label3;
     }
 }

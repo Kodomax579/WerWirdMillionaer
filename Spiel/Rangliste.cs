@@ -14,8 +14,10 @@ namespace Spiel
     {
         ControllerRangliste controller = new ControllerRangliste();
         int SpielerID;
-        public Rangliste(int ID)
+        string aktuellerScore;
+        public Rangliste(int ID,string aktuellerscore)
         {
+            aktuellerScore = aktuellerscore;
             SpielerID = ID;
             InitializeComponent();
         }
@@ -27,18 +29,23 @@ namespace Spiel
 
         private void Rangliste_Load(object sender, EventArgs e)
         {
-            controller.getranking(erster, zweiter, dritter);
-            controller.getOwnrank(MeinPlatz, SpielerID);
+           
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Startseite Startseite = new Startseite(SpielerID);
+            Startseite Startseite = new Startseite(SpielerID,aktuellerScore);
             Startseite.Show();
             this.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void erster_Click(object sender, EventArgs e)
         {
 
         }

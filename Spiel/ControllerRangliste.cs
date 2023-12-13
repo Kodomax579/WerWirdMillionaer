@@ -11,38 +11,14 @@ namespace Spiel
     {
         private MySQL mysql = new MySQL("localhost", "wwm", "root", "", "3306", "none");
 
-        public void getranking(Label erster, Label zweiter, Label dritter)
+        public void getranking(ListBox listBox1)
         {
             List<string> ranked = mysql.GetAllRanking();
-
-            switch (ranked.Count)
+            for(int i = 0; i < ranked.Count; i++)
             {
-                case 0:
-                    erster.Text = "Kein Spieler";
-                    zweiter.Text = "Kein Spieler";
-                    dritter.Text = "Kein Spieler";
-                    break;
-                case 1:
-                    erster.Text = ranked[0];
-                    zweiter.Text = "Kein Spieler";
-                    dritter.Text = "Kein Spieler";
-                    break;
-                case 2:
-                    erster.Text = ranked[0];
-                    zweiter.Text = ranked[1];
-                    dritter.Text = "Kein Spieler";
-                    break;
-                case 3:
-                    erster.Text = ranked[0];
-                    zweiter.Text = ranked[1];
-                    dritter.Text = ranked[2];
-                    break;
-                default:
-                    erster.Text = ranked[0];
-                    zweiter.Text = ranked[1];
-                    dritter.Text = ranked[2];
-                    break;
+                listBox1.Items.Add(ranked[i]);
             }
+            
         }
 
         public void getOwnrank(Label meinPlatz, int SpielerID)

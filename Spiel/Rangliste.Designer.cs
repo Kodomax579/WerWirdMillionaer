@@ -58,6 +58,7 @@
             erster.Size = new Size(75, 30);
             erster.TabIndex = 1;
             erster.Text = "1.Platz";
+            erster.Click += erster_Click;
             // 
             // zweiter
             // 
