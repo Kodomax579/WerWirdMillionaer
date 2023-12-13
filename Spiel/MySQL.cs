@@ -92,7 +92,7 @@ namespace Spiel
         //
         public bool doppelterEintrag(string name, string nachname, string username, string email)
         {
-            string query = "SELECT * FROM spieler WHERE username = @username OR name = @name OR nachname = @nachname OR email = @email";
+            string query = "SELECT * FROM spieler WHERE username = @username AND name = @name AND nachname = @nachname AND email = @email";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
 
@@ -166,7 +166,7 @@ namespace Spiel
             {
                 while (mySqlDataReader.Read())
                 {
-                    if (mySqlDataReader.GetInt32(0) < stufe)
+                    if (mySqlDataReader.GetInt32(0) > stufe)
                     {
                         mySqlDataReader.Close();
                         return UpdateHighscore(SpielerID, stufe, time);
@@ -176,23 +176,15 @@ namespace Spiel
                         mySqlDataReader.Close();
                         return UpdateHighscore(SpielerID, stufe, time);
                     }
-                    else if(mySqlDataReader.GetInt32(0) > stufe)
-                    {
-                        mySqlDataReader.Close();
-                        return true;
-                    }
                     else if (mySqlDataReader.GetInt32(0) == stufe && mySqlDataReader.GetInt32(1) < time)
                     {
                         mySqlDataReader.Close();
                         return true;
                     }
-                    else
-                    {
-                        mySqlDataReader.Close();
-                        return InsertHighscore(SpielerID,stufe,time);
-                    }
+                   
                 }
-                return false;
+                mySqlDataReader.Close();
+                return InsertHighscore(SpielerID, stufe, time);
             }
 
         }
@@ -207,7 +199,7 @@ namespace Spiel
             string username = getUsername(SpielerID);
             mySqlCommand.Parameters.AddWithValue("@Stufe", Stufe);
             mySqlCommand.Parameters.AddWithValue("@time", time);
-            mySqlCommand.Parameters.AddWithValue("@username", username);
+            mySqlCommand.Parameters.AddWithValue("@username", getUsername(SpielerID));
 
             int rowsAffected = mySqlCommand.ExecuteNonQuery();
 
@@ -229,7 +221,7 @@ namespace Spiel
 
             string username = getUsername(SpielerID);
             mySqlCommand.Parameters.AddWithValue("@Stufe", Stufe);
-            mySqlCommand.Parameters.AddWithValue("@username", username);
+            mySqlCommand.Parameters.AddWithValue("@username", getUsername(SpielerID));
             mySqlCommand.Parameters.AddWithValue("@time", time);
 
             int rowsAffected = mySqlCommand.ExecuteNonQuery();

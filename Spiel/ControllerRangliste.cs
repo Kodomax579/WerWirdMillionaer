@@ -37,6 +37,11 @@ namespace Spiel
                     zweiter.Text = ranked[1];
                     dritter.Text = ranked[2];
                     break;
+                default:
+                    erster.Text = ranked[0];
+                    zweiter.Text = ranked[1];
+                    dritter.Text = ranked[2];
+                    break;
             }
         }
 

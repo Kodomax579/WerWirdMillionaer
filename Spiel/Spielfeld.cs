@@ -96,9 +96,9 @@ namespace Spiel
                 this.Close();
         }
 
-        private async void CorrectAnswerOnline(int ButtonNumber)
+        private void CorrectAnswerOnline(int ButtonNumber)
         {
-            bool isAnswerCorrect = await controller.Antwort(ButtonNumber, Antwort1, Antwort2, Antwort3, Antwort4);
+            bool isAnswerCorrect = controller.Antwort(ButtonNumber, Antwort1, Antwort2, Antwort3, Antwort4);
 
             if (isAnswerCorrect)
             {
@@ -110,7 +110,7 @@ namespace Spiel
                 {
                     sw.Stop();
                     time = (int)sw.Elapsed.TotalMilliseconds;
-                    controller.InsertRanked(id, time);
+                    Startseite.GetandSetScore(controller.InsertRanked(id, time));
 
                     MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Startseite.Show();
@@ -121,13 +121,14 @@ namespace Spiel
             {
                 sw.Stop();
                 time = (int)sw.Elapsed.TotalMilliseconds;
-                controller.InsertRanked(id, time);
+                Startseite.GetandSetScore(controller.InsertRanked(id, time));
                 // controller.InsertRanked(id, time);
 
                 MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
                 this.Close();
             }
+            Startseite.GetandSetScore("Kein Score");
         }
 
         private async void CorrectAnswerOffline(int ButtonNumber)
