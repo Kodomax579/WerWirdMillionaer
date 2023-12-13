@@ -181,7 +181,11 @@ namespace Spiel
                         mySqlDataReader.Close();
                         return true;
                     }
-                   
+                    else if (mySqlDataReader.GetInt32(0) > stufe)
+                    {
+                        mySqlDataReader.Close();
+                        return true;
+                    }
                 }
                 mySqlDataReader.Close();
                 return InsertHighscore(SpielerID, stufe, time);

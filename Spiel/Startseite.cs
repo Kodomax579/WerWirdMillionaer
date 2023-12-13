@@ -13,16 +13,13 @@ namespace Spiel
     public partial class Startseite : Form
     {
         public string AktuellerScore = "Kein Score";
-        int ID;
+        int ID, Platz;
         public Startseite(int SpielerID)
         {
             ID = SpielerID;
             InitializeComponent();
             label2.Text = AktuellerScore;
-            if (ID == -1)
-            {
-                button3.Enabled = false;
-            }
+            
 
         }
         public Startseite(int SpielerID, string aktuellerscore)
@@ -31,10 +28,7 @@ namespace Spiel
             InitializeComponent();
             AktuellerScore = aktuellerscore;
             label2.Text = AktuellerScore;
-            if (ID == -1)
-            {
-                button3.Enabled = false;
-            }
+            
 
         }
 
@@ -54,6 +48,8 @@ namespace Spiel
         {
             ControllerRangliste controllerRangliste = new ControllerRangliste();
             controllerRangliste.getranking(listBox1);
+            Platz = controllerRangliste.getOwnrank(ID);
+           
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -90,14 +86,13 @@ namespace Spiel
             label2.Text = AktuellerScore;
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            if (listBox1.SelectedItem != null)
+            {
+                MessageBox.Show(listBox1.SelectedItem.ToString(), "Highscore From:");
+            }
         }
     }
 }

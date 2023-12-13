@@ -73,7 +73,7 @@ namespace Spiel
             }
              answerButtons[RichtigeAntwort - 1].BackColor = Color.Green;
 
-            await Task.Delay(3000);
+            await Task.Delay(2000);
 
             foreach (Button btn in answerButtons)
             {
@@ -108,14 +108,14 @@ namespace Spiel
                     time = time / 1000;
                     Time = time.ToString();
                     Time = Time.Remove(Time.Length - 1);
-                    Time = "!!Aktueller Score!!\nStufe: " + Zaehler + "\nZeit: " + Time;
+                    Time = "Score\nStufe: " + Zaehler + "\nZeit: " + Time;
                     return Time;
                 }
             }
             time = time / 1000;
             Time = time.ToString();
             Time = Time.Remove(Time.Length - 1);
-            Time = "!!Aktueller Score!!\nStufe: " + Zaehler + "\nZeit: " + Time;
+            Time = "Score\nStufe: " + Zaehler + "\nZeit: " + Time;
             return Time;
         }
 

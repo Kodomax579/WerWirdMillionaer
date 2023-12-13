@@ -21,10 +21,11 @@ namespace Spiel
             
         }
 
-        public void getOwnrank(Label meinPlatz, int SpielerID)
+        public int getOwnrank(int SpielerID)
         {
             List<string> ranked = mysql.GetOwnRank();
             int rankZaehler = 0;
+            string username = mysql.getUsername(SpielerID);
 
             for (int i = 0; i < ranked.Count; i++)
             {
@@ -36,12 +37,12 @@ namespace Spiel
                 string Stufe = ranklist[1].Trim();
                 string time = ranklist[2].Trim();
 
-                if (Rank == mysql.getUsername(SpielerID))
+                if (Rank == username)
                 {
-                    meinPlatz.Text = "Platz: " + rankZaehler + "\n" + "Stufe: " + Stufe + "\nZeit: " + time;
-                    break; // Exit the loop once the player is found
+                    return rankZaehler;
                 }
             }
+            return rankZaehler;
         }
     }
 }

@@ -90,9 +90,9 @@ namespace Spiel
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Zurück zum Start", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            controller.InsertRanked(id, time);
-            
-                Startseite.Show();
+            Startseite.GetandSetScore(controller.InsertRanked(id, time));
+
+            Startseite.Show();
                 this.Close();
         }
 
