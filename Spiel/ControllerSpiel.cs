@@ -67,15 +67,15 @@ namespace Spiel
 
             foreach (Button btn in answerButtons)
             {
-                btn.BackColor = Color.Red;
+                btn.ForeColor = Color.Red;
             }
-             answerButtons[RichtigeAntwort - 1].BackColor = Color.Green;
+             answerButtons[RichtigeAntwort - 1].ForeColor = Color.Green;
 
             await Task.Delay(2000);
 
             foreach (Button btn in answerButtons)
             {
-                btn.BackColor =default(Color);
+                btn.ForeColor = Color.White;
             }
             
 
@@ -135,18 +135,22 @@ namespace Spiel
                 {
                     case 1:
                         antwort1.Enabled = false;
+                        antwort1.ForeColor = Color.Gray;
                         speicher = ran;
                         break;
                     case 2:
                         antwort2.Enabled = false;
+                        antwort2.ForeColor = Color.Gray;
                         speicher = ran;
                         break;
                     case 3:
                         antwort3.Enabled = false;
+                        antwort3.ForeColor = Color.Gray;
                         speicher = ran;
                         break;
                     case 4:
                         antwort4.Enabled = false;
+                        antwort4.ForeColor = Color.Gray;
                         speicher = ran;
                         break;
                 }

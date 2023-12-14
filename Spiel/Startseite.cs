@@ -89,7 +89,7 @@ namespace Spiel
             label2.Text = AktuellerScore;
         }
 
-        
+
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
@@ -98,5 +98,12 @@ namespace Spiel
                 MessageBox.Show(listBox1.SelectedItem.ToString(), "Highscore From:");
             }
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

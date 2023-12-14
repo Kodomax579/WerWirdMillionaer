@@ -73,6 +73,7 @@
             button2.Text = "Einloggen";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
+            button2.MouseHover += button1_MouseHover;
             // 
             // label2
             // 
@@ -145,6 +146,7 @@
             button3.Text = "Regristrieren";
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
+            button3.MouseHover += button1_MouseHover;
             // 
             // button1
             // 
@@ -165,6 +167,7 @@
             button1.Text = "Als Gast Spielen";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            button1.MouseHover += button1_MouseHover;
             // 
             // Login
             // 

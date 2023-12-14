@@ -34,7 +34,7 @@ namespace Spiel
 
         public void PerformAction(bool checkBoxState)
         {
-            if(checkBoxState == true)
+            if (checkBoxState == true)
             {
                 LeaderBoardPart = true;
             }
@@ -111,6 +111,8 @@ namespace Spiel
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Zurück zum Start", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            sw.Stop();
+            time = (int)sw.Elapsed.TotalMilliseconds;
             Startseite.GetandSetScore(controller.InsertRanked(id, time));
 
             Startseite.Show();
@@ -132,11 +134,10 @@ namespace Spiel
                     sw.Stop();
                     time = (int)sw.Elapsed.TotalMilliseconds;
 
-                    if(LeaderBoardPart == true)
-                    {
-                        Startseite.GetandSetScore(controller.InsertRanked(id, time));
-                    }
-                    
+                    //if (LeaderBoardPart == true){
+                    Startseite.GetandSetScore(controller.InsertRanked(id, time));
+                    //}
+
 
                     MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Startseite.Show();
@@ -148,10 +149,9 @@ namespace Spiel
                 sw.Stop();
                 time = (int)sw.Elapsed.TotalMilliseconds;
 
-                if (LeaderBoardPart == true)
-                {
-                    Startseite.GetandSetScore(controller.InsertRanked(id, time));
-                }
+                // if (LeaderBoardPart == true){
+                Startseite.GetandSetScore(controller.InsertRanked(id, time));
+                // }
 
                 MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
@@ -189,6 +189,7 @@ namespace Spiel
         private void button2_Click(object sender, EventArgs e)
         {
             controller.FiftyFiftyJoker(Antwort1, Antwort2, Antwort3, Antwort4);
+            button2.Enabled = false;
         }
 
         private void Stufe3_CheckedChanged(object sender, EventArgs e)

@@ -59,11 +59,12 @@
             Antwort1.BackgroundImage = (Image)resources.GetObject("Antwort1.BackgroundImage");
             Antwort1.BackgroundImageLayout = ImageLayout.Stretch;
             Antwort1.FlatAppearance.BorderSize = 0;
+            Antwort1.FlatAppearance.CheckedBackColor = Color.Transparent;
             Antwort1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Antwort1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Antwort1.FlatStyle = FlatStyle.Flat;
             Antwort1.ForeColor = SystemColors.Control;
-            Antwort1.Location = new Point(63, 253);
+            Antwort1.Location = new Point(163, 250);
             Antwort1.Name = "Antwort1";
             Antwort1.Size = new Size(192, 50);
             Antwort1.TabIndex = 0;
@@ -78,11 +79,12 @@
             Antwort2.BackgroundImage = (Image)resources.GetObject("Antwort2.BackgroundImage");
             Antwort2.BackgroundImageLayout = ImageLayout.Stretch;
             Antwort2.FlatAppearance.BorderSize = 0;
+            Antwort2.FlatAppearance.CheckedBackColor = Color.Transparent;
             Antwort2.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Antwort2.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Antwort2.FlatStyle = FlatStyle.Flat;
             Antwort2.ForeColor = SystemColors.Control;
-            Antwort2.Location = new Point(337, 253);
+            Antwort2.Location = new Point(437, 250);
             Antwort2.Name = "Antwort2";
             Antwort2.Size = new Size(185, 50);
             Antwort2.TabIndex = 1;
@@ -97,11 +99,12 @@
             Antwort3.BackgroundImage = (Image)resources.GetObject("Antwort3.BackgroundImage");
             Antwort3.BackgroundImageLayout = ImageLayout.Stretch;
             Antwort3.FlatAppearance.BorderSize = 0;
+            Antwort3.FlatAppearance.CheckedBackColor = Color.Transparent;
             Antwort3.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Antwort3.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Antwort3.FlatStyle = FlatStyle.Flat;
             Antwort3.ForeColor = SystemColors.Control;
-            Antwort3.Location = new Point(63, 330);
+            Antwort3.Location = new Point(163, 327);
             Antwort3.Name = "Antwort3";
             Antwort3.Size = new Size(192, 51);
             Antwort3.TabIndex = 2;
@@ -116,11 +119,12 @@
             Antwort4.BackgroundImage = (Image)resources.GetObject("Antwort4.BackgroundImage");
             Antwort4.BackgroundImageLayout = ImageLayout.Stretch;
             Antwort4.FlatAppearance.BorderSize = 0;
+            Antwort4.FlatAppearance.CheckedBackColor = Color.Transparent;
             Antwort4.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Antwort4.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Antwort4.FlatStyle = FlatStyle.Flat;
             Antwort4.ForeColor = SystemColors.Control;
-            Antwort4.Location = new Point(337, 330);
+            Antwort4.Location = new Point(437, 327);
             Antwort4.Name = "Antwort4";
             Antwort4.Size = new Size(185, 51);
             Antwort4.TabIndex = 3;
@@ -285,6 +289,7 @@
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.CheckedBackColor = Color.Transparent;
             button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
@@ -302,11 +307,15 @@
             button2.BackColor = Color.Transparent;
             button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
             button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.CheckedBackColor = Color.Transparent;
+            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button2.FlatStyle = FlatStyle.Flat;
             button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(28, 39);
+            button2.Location = new Point(57, 50);
             button2.Name = "button2";
-            button2.Size = new Size(63, 48);
+            button2.Size = new Size(96, 80);
             button2.TabIndex = 16;
             button2.Text = "50/50";
             button2.UseVisualStyleBackColor = false;
@@ -318,7 +327,7 @@
             frage.AutoSize = true;
             frage.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             frage.ForeColor = SystemColors.ButtonFace;
-            frage.Location = new Point(27, 20);
+            frage.Location = new Point(38, 17);
             frage.MaximumSize = new Size(500, 80);
             frage.Name = "frage";
             frage.Size = new Size(132, 32);
@@ -332,9 +341,9 @@
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(frage);
-            panel1.Location = new Point(82, 117);
+            panel1.Location = new Point(121, 108);
             panel1.Name = "panel1";
-            panel1.Size = new Size(544, 82);
+            panel1.Size = new Size(551, 91);
             panel1.TabIndex = 17;
             // 
             // Spielfeld
