@@ -49,15 +49,15 @@ namespace Spiel
 
                 switch(Zaehler)
                 {
-                    case 2: stufe1.Checked= true; break;
-                    case 3: stufe2.Checked= true; break;
-                    case 4: stufe3.Checked= true; break;
-                    case 5: stufe4.Checked= true; break;
-                    case 6: stufe5.Checked= true; break;
-                    case 7: stufe6.Checked= true; break;
-                    case 8: stufe7.Checked= true; break;
-                    case 9: stufe8.Checked= true; break;
-                    case 10: stufe9.Checked= true; break;
+                    case 2: stufe1.Checked= true;  stufe1.BackColor = Color.Green; break;
+                    case 3: stufe2.Checked= true; stufe2.BackColor = Color.Green; break;
+                    case 4: stufe3.Checked= true; stufe3.BackColor = Color.Green; break;
+                    case 5: stufe4.Checked= true; stufe4.BackColor = Color.Green; break;
+                    case 6: stufe5.Checked= true; stufe5.BackColor = Color.Green; break;
+                    case 7: stufe6.Checked= true; stufe6.BackColor = Color.Green; break;
+                    case 8: stufe7.Checked= true; stufe7.BackColor = Color.Green; break;
+                    case 9: stufe8.Checked= true; stufe8.BackColor = Color.Green; break;
+                    case 10: stufe9.Checked= true; stufe9.BackColor = Color.Green; break;
 
                 }
             }

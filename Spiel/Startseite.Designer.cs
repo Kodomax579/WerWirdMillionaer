@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Startseite));
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
@@ -39,9 +40,12 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(352, 9);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(357, 11);
             label1.Name = "label1";
             label1.Size = new Size(209, 32);
             label1.TabIndex = 0;
@@ -50,10 +54,11 @@
             // 
             // button1
             // 
-            button1.Location = new Point(352, 319);
+            button1.Anchor = AnchorStyles.Bottom;
+            button1.Location = new Point(352, 244);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(175, 32);
+            button1.Size = new Size(192, 40);
             button1.TabIndex = 1;
             button1.Text = "Neues Spiel";
             button1.UseVisualStyleBackColor = true;
@@ -61,10 +66,11 @@
             // 
             // button2
             // 
-            button2.Location = new Point(352, 368);
+            button2.Anchor = AnchorStyles.Bottom;
+            button2.Location = new Point(352, 308);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(175, 32);
+            button2.Size = new Size(192, 43);
             button2.TabIndex = 2;
             button2.Text = "Optionen";
             button2.UseVisualStyleBackColor = true;
@@ -72,10 +78,11 @@
             // 
             // button4
             // 
-            button4.Location = new Point(32, 371);
+            button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button4.Location = new Point(88, 308);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(175, 32);
+            button4.Size = new Size(189, 43);
             button4.TabIndex = 4;
             button4.Text = "Ausloggen";
             button4.UseVisualStyleBackColor = true;
@@ -83,9 +90,12 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(727, 32);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(760, 18);
             label2.Name = "label2";
             label2.Size = new Size(63, 25);
             label2.TabIndex = 5;
@@ -95,17 +105,19 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(32, 32);
+            listBox1.Location = new Point(56, 42);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(186, 229);
+            listBox1.Size = new Size(220, 229);
             listBox1.TabIndex = 6;
             listBox1.DoubleClick += listBox1_DoubleClick;
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(68, 4);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(107, 9);
             label3.Name = "label3";
             label3.Size = new Size(97, 25);
             label3.TabIndex = 7;
@@ -115,6 +127,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(949, 455);
             Controls.Add(label3);
             Controls.Add(listBox1);
