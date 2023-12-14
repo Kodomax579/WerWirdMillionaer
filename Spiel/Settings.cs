@@ -28,7 +28,7 @@ namespace Spiel
         {
             return checkBox1;
         }
-
+        //wda
         public Settings(int SpielerID)
         {
             ID = SpielerID;
