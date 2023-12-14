@@ -16,19 +16,28 @@ namespace Spiel
         private bool MouseOnS_Slider = false;
         public bool SchriftGrößeSliderVisibility;
         public bool SchwierigkeitsSliderVisibility;
+        int ID;
+
         private void Settings_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
             SchriftGrößeSlider.Visible = false;
             SchwierigkeitsSlider.Visible = false;
         }
 
-        public Settings()
+        public CheckBox GetCheckBoxFromSettings()
         {
-            InitializeComponent();
+            return checkBox1;
+        }
 
+        public Settings(int SpielerID)
+        {
+            ID = SpielerID;
+            InitializeComponent();
+            checkBox1 = new CheckBox();
         }
         private TrackBar SchriftGrößeSlider = new TrackBar();
+
+
 
         private void SchriftGrößeButton_MouseEnter(object sender, EventArgs e)
         {
@@ -153,11 +162,21 @@ namespace Spiel
             }
         }
 
-        private void DarkModeButton_Enter(object sender, EventArgs e)
+        public bool GetCheckBoxState()
         {
-
+            return checkBox1.Checked;
         }
 
-        
+        public void SetCheckBoxState(bool newState)
+        {
+            checkBox1.Checked = newState;
+        }
+
+        private void ZuruckZurStartseite_Click(object sender, EventArgs e)
+        {
+            Startseite start = new Startseite(ID);
+            this.Close();
+            start.Show();
+        }
     }
 }

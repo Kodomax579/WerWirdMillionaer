@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using System.Diagnostics;
+using Spiel.Spiel;
 
 namespace Spiel
 {
@@ -19,13 +20,28 @@ namespace Spiel
         Stopwatch sw = new Stopwatch();
         ControllerSpiel controller = new ControllerSpiel();
         Startseite Startseite;
+        bool LeaderBoardPart;
 
+        //private ControllerSettings controllerSettings;
 
         public Spielfeld(int SpielerID)
         {
             id = SpielerID;
             Startseite = new Startseite(id);
             InitializeComponent();
+            //this.controllerSettings = controllerSettings;
+        }
+
+        public void PerformAction(bool checkBoxState)
+        {
+            if(checkBoxState == true)
+            {
+                LeaderBoardPart = true;
+            }
+            else
+            {
+                LeaderBoardPart = false;
+            }
         }
 
         private void Spielfeld_Load(object sender, EventArgs e)
@@ -115,7 +131,12 @@ namespace Spiel
                 {
                     sw.Stop();
                     time = (int)sw.Elapsed.TotalMilliseconds;
-                    Startseite.GetandSetScore(controller.InsertRanked(id, time));
+
+                    if(LeaderBoardPart == true)
+                    {
+                        Startseite.GetandSetScore(controller.InsertRanked(id, time));
+                    }
+                    
 
                     MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Startseite.Show();
@@ -126,8 +147,11 @@ namespace Spiel
             {
                 sw.Stop();
                 time = (int)sw.Elapsed.TotalMilliseconds;
-                Startseite.GetandSetScore(controller.InsertRanked(id, time));
-                // controller.InsertRanked(id, time);
+
+                if (LeaderBoardPart == true)
+                {
+                    Startseite.GetandSetScore(controller.InsertRanked(id, time));
+                }
 
                 MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Startseite.Show();
