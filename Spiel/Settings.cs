@@ -17,7 +17,8 @@ namespace Spiel
         public bool SchriftGrößeSliderVisibility;
         public bool SchwierigkeitsSliderVisibility;
         private void Settings_Load(object sender, EventArgs e)
-        { SchriftGrößeSlider.Visible = false;
+        {
+            SchriftGrößeSlider.Visible = false;
             SchwierigkeitsSlider.Visible = false;
         }
 
@@ -36,16 +37,16 @@ namespace Spiel
             SchriftGrößeSlider.BringToFront();
             SchriftGrößeSliderVisibility = true;
             SchriftGrößeSliderVisible();
-            
+
         }
 
         private void SchriftGrößeSlider_MouseEnter(object sender, EventArgs e)
-            {
-                MouseOnSlider = true;
-                SchriftGrößeSliderVisibility = true;
-                SchriftGrößeButton.SendToBack();
-                SchriftGrößeSlider.BringToFront();
-                SchriftGrößeSliderVisible();
+        {
+            MouseOnSlider = true;
+            SchriftGrößeSliderVisibility = true;
+            SchriftGrößeButton.SendToBack();
+            SchriftGrößeSlider.BringToFront();
+            SchriftGrößeSliderVisible();
         }
 
         private void SchriftGrößeSlider_MouseLeave(object sender, EventArgs e)
@@ -55,7 +56,7 @@ namespace Spiel
         }
 
         private void SchriftGrößeButton_MouseLeave(object sender, EventArgs e)
-        { 
+        {
             if (MouseOnSlider == false)
             {
                 SchriftGrößeSliderVisibility = false;
@@ -79,7 +80,7 @@ namespace Spiel
         ///////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////
 
-        private TrackBar SchwierigkeitsSlider= new TrackBar();
+        private TrackBar SchwierigkeitsSlider = new TrackBar();
 
         private void SchwierigkeitsButton_MouseEnter(object sender, EventArgs e)
         {
@@ -132,11 +133,11 @@ namespace Spiel
         ///////////////////////////////////////////////////////////////////////////
         private void DarkModeButton_Click(object sender, EventArgs e)
         {
-            if(DarkModeImg.Visible == true)
+            if (DarkModeImg.Visible == true)
             {
                 DarkModeImg.Visible = false;
             }
-            else if(DarkModeImg.Visible == false)
+            else if (DarkModeImg.Visible == false)
             {
                 DarkModeImg.Visible = true;
             }
@@ -148,7 +149,7 @@ namespace Spiel
             else if (LightModeImg.Visible == false)
             {
                 LightModeImg.Visible = true;
-            }           
+            }
         }
 
         private void DarkModeButton_Enter(object sender, EventArgs e)
@@ -173,6 +174,5 @@ namespace Spiel
                     }
                 }
             }
-        }*/
     }
 }

@@ -19,7 +19,7 @@ namespace Spiel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Spieler spieler = new Spieler();
+            ControllerLogin spieler = new ControllerLogin();
 
             if (spieler.doppelterEintrag(name, nachname, username, Email))
             {
@@ -29,6 +29,14 @@ namespace Spiel
                     lg.Show();
                     this.Close();
                 }
+                else
+                {
+                    MessageBox.Show("Connection Lost", "No Database Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Lost", "No Database Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

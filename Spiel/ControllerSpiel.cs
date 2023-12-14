@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 
 namespace Spiel
 {
-    internal class Controller 
+    internal class ControllerSpiel 
     {
         private MySQL mysql = new MySQL("localhost", "wwm", "root", "", "3306", "none");
         int ID;
@@ -72,9 +72,8 @@ namespace Spiel
                 btn.BackColor = Color.Red;
             }
              answerButtons[RichtigeAntwort - 1].BackColor = Color.Green;
-            
 
-            await Task.Delay(3000);
+            await Task.Delay(2000);
 
             foreach (Button btn in answerButtons)
             {
@@ -90,73 +89,49 @@ namespace Spiel
             if(Zaehler < 10)
             {
 
-                return true;
+                return false;
             }
             else
             {
-                return false;
-            }
-        }
-
-        public void getranking(Label erster, Label zweiter, Label dritter)
-        {
-            List<string> ranked = mysql.GetAllRanking();
-            
-            switch(ranked.Count)
-            {
-                case 0:
-                    erster.Text = "Kein Spieler";
-                    zweiter.Text = "Kein Spieler";
-                    dritter.Text = "Kein Spieler";
-                    break;
-                case 1:
-                    erster.Text = ranked[0];
-                    zweiter.Text = "Kein Spieler";
-                    dritter.Text = "Kein Spieler";
-                    break;
-                case 2:
-                    erster.Text = ranked[0];
-                    zweiter.Text = ranked[1];
-                    dritter.Text = "Kein Spieler";
-                    break;
-                case 3:
-                    erster.Text = ranked[0];
-                    zweiter.Text= ranked[1];
-                    dritter.Text= ranked[2];
-                    break;
-            }
-        }
-
-        public void getOwnrank(Label meinPlatz, int SpielerID)
-        {
-            List<string> ranked = mysql.GetOwnRank();
-            int rankZaehler = 0;
-
-            for (int i = 0; i < ranked.Count; i++)
-            {
-                rankZaehler++;
-                string list = ranked[i];
-                string[] ranklist = list.Split(',');
-
-                string Rank = ranklist[0].Trim();
-               string Stufe = ranklist[1].Trim();
-
-                if (Rank == mysql.getUsername(SpielerID))
-                {
-                    meinPlatz.Text = "Platz:" + rankZaehler + " Stufe:" +Stufe;
-                    break; // Exit the loop once the player is found
-                }
-            }
-        }
-
-
-        public bool InsertRanked(int SpielerID, int time)
-        {
-           if(mysql.AlreadyHighscore(SpielerID,Zaehler,time))
-            {
                 return true;
             }
-           return false;
+        }
+        public string InsertRanked(int SpielerID, int timer)
+        {
+            String Time;
+            double time = timer;
+            if (SpielerID != 0)
+            {
+                if (mysql.AlreadyHighscore(SpielerID, Zaehler, timer))
+                {
+
+                    time = time / 1000;
+                    Time = time.ToString();
+                    Time = Time.Remove(Time.Length - 1);
+                    Time = "Score\nStufe: " + Zaehler + "\nZeit: " + Time;
+                    return Time;
+                }
+            }
+            time = time / 1000;
+            Time = time.ToString();
+            Time = Time.Remove(Time.Length - 1);
+            Time = "Score\nStufe: " + Zaehler + "\nZeit: " + Time;
+            return Time;
+        }
+
+        internal Task<bool> AntwortOffline(int buttonNumber, Button antwort1, Button antwort2, Button antwort3, Button antwort4)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool gewonnenOffline()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void GetFrageOffline(Label frage, Button antwort1, Button antwort2, Button antwort3, Button antwort4, CheckBox stufe1, CheckBox stufe2, CheckBox stufe3, CheckBox stufe4, CheckBox stufe5, CheckBox stufe6, CheckBox stufe7, CheckBox stufe8, CheckBox stufe9, CheckBox stufe10)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -15,13 +15,9 @@ using MySqlX.XDevAPI;
 
 namespace Spiel
 {
-
     class MySQL
     {
-
         private MySqlConnection conn;
-
-
 
         //Konstruktor der die Verbindung zur Datenbank aufbaut
         public MySQL(string server, string database, string user, string password, string port, string sslM)
@@ -96,7 +92,7 @@ namespace Spiel
         //
         public bool doppelterEintrag(string name, string nachname, string username, string email)
         {
-            string query = "SELECT * FROM spieler WHERE username = @username OR name = @name OR nachname = @nachname OR email = @email";
+            string query = "SELECT * FROM spieler WHERE username = @username AND name = @name AND nachname = @nachname AND email = @email";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
 
@@ -180,28 +176,22 @@ namespace Spiel
                         mySqlDataReader.Close();
                         return UpdateHighscore(SpielerID, stufe, time);
                     }
-                    else if(mySqlDataReader.GetInt32(0) > stufe)
-                    {
-                        mySqlDataReader.Close();
-                        return true;
-                    }
                     else if (mySqlDataReader.GetInt32(0) == stufe && mySqlDataReader.GetInt32(1) < time)
                     {
                         mySqlDataReader.Close();
                         return true;
                     }
-                    else
+                    else if (mySqlDataReader.GetInt32(0) > stufe)
                     {
                         mySqlDataReader.Close();
-                        return InsertHighscore(SpielerID,stufe,time);
+                        return true;
                     }
                 }
-                return false;
+                mySqlDataReader.Close();
+                return InsertHighscore(SpielerID, stufe, time);
             }
 
         }
-
-        
 
         // Highscore Updaten
         public bool UpdateHighscore(int SpielerID, int Stufe, int time)
@@ -213,7 +203,7 @@ namespace Spiel
             string username = getUsername(SpielerID);
             mySqlCommand.Parameters.AddWithValue("@Stufe", Stufe);
             mySqlCommand.Parameters.AddWithValue("@time", time);
-            mySqlCommand.Parameters.AddWithValue("@username", username);
+            mySqlCommand.Parameters.AddWithValue("@username", getUsername(SpielerID));
 
             int rowsAffected = mySqlCommand.ExecuteNonQuery();
 
@@ -235,7 +225,7 @@ namespace Spiel
 
             string username = getUsername(SpielerID);
             mySqlCommand.Parameters.AddWithValue("@Stufe", Stufe);
-            mySqlCommand.Parameters.AddWithValue("@username", username);
+            mySqlCommand.Parameters.AddWithValue("@username", getUsername(SpielerID));
             mySqlCommand.Parameters.AddWithValue("@time", time);
 
             int rowsAffected = mySqlCommand.ExecuteNonQuery();
@@ -271,10 +261,10 @@ namespace Spiel
         {
             List<string> ranked = new List<string>();
 
-            string Stufe,username,datensatz;
+            string Stufe,username,datensatz,Time;
+            double time;
 
-
-            string query = "SELECT username,Stufe From highscore ORDER BY Stufe DESC";
+            string query = "SELECT username,Stufe,Time From highscore ORDER BY Stufe DESC, Time ASC";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
 
@@ -284,23 +274,25 @@ namespace Spiel
                 {
                     username = mySqlDataReader1.GetString(0);
                     Stufe = mySqlDataReader1.GetString(1);
+                    time = mySqlDataReader1.GetInt32(2);
+                    time = time / 1000;
+                    Time = time.ToString();
+                    Time = Time.Remove(Time.Length - 1);
 
-                    datensatz = $"{username} Stufe: {Stufe}";
+                    datensatz = $"{username}  Stufe: {Stufe}  Zeit: {Time}";
                     ranked.Add(datensatz);
                 }
             }
-
             return ranked;
-
         }
         public List<string> GetOwnRank()
         {
             List<string> ranked = new List<string>();
 
-            string Stufe, username, datensatz;
+            string Stufe, username, datensatz, Time;
+            double time;
 
-
-            string query = "SELECT username,Stufe From highscore ORDER BY Stufe DESC";
+            string query = "SELECT username,Stufe,Time From highscore ORDER BY Stufe DESC, Time ASC";
             MySqlCommand mySqlCommand = conn.CreateCommand();
             mySqlCommand.CommandText = query;
 
@@ -310,14 +302,16 @@ namespace Spiel
                 {
                     username = mySqlDataReader1.GetString(0);
                     Stufe = mySqlDataReader1.GetString(1);
+                    time = mySqlDataReader1.GetInt32(2);
+                    time = time / 1000;
+                    Time = time.ToString();
+                    Time = Time.Remove(Time.Length - 1);
 
-                    datensatz = $"{username},{Stufe}";
+                    datensatz = $"{username}:{Stufe}: {Time}";
                     ranked.Add(datensatz);
                 }
             }
-
             return ranked;
-
         }
     }
 }

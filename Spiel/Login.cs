@@ -31,23 +31,33 @@ namespace Spiel
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Spieler controlling = new Spieler();
+            ControllerLogin controlling = new ControllerLogin();
 
 
             int ID = controlling.login(username, password);
             if (ID > 0)
             {
-
                 Startseite set = new Startseite(controlling.getSpielerID());
 
                 this.Hide();
                 set.Show();
+            }
+            else
+            {
+                MessageBox.Show("Wrong Username or Passwort", "Wrong Username or Passwort", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void password_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Startseite set = new Startseite(0);
+            this.Hide();
+            set.Show();
         }
     }
 }
