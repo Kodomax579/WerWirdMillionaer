@@ -39,5 +39,10 @@ namespace Spiel
                 MessageBox.Show("Connection Lost", "No Database Connection", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void Regristrieren_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

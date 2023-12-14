@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Spielfeld));
             Antwort1 = new Button();
             Antwort2 = new Button();
             Antwort3 = new Button();
@@ -50,9 +51,10 @@
             // 
             // Antwort1
             // 
-            Antwort1.Location = new Point(107, 293);
+            Antwort1.Anchor = AnchorStyles.Bottom;
+            Antwort1.Location = new Point(63, 253);
             Antwort1.Name = "Antwort1";
-            Antwort1.Size = new Size(144, 44);
+            Antwort1.Size = new Size(192, 50);
             Antwort1.TabIndex = 0;
             Antwort1.Text = "button1";
             Antwort1.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // 
             // Antwort2
             // 
-            Antwort2.Location = new Point(374, 293);
+            Antwort2.Anchor = AnchorStyles.Bottom;
+            Antwort2.Location = new Point(337, 253);
             Antwort2.Name = "Antwort2";
-            Antwort2.Size = new Size(144, 44);
+            Antwort2.Size = new Size(185, 50);
             Antwort2.TabIndex = 1;
             Antwort2.Text = "button2";
             Antwort2.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // 
             // Antwort3
             // 
-            Antwort3.Location = new Point(107, 371);
+            Antwort3.Anchor = AnchorStyles.Bottom;
+            Antwort3.Location = new Point(63, 330);
             Antwort3.Name = "Antwort3";
-            Antwort3.Size = new Size(144, 44);
+            Antwort3.Size = new Size(192, 51);
             Antwort3.TabIndex = 2;
             Antwort3.Text = "button3";
             Antwort3.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // 
             // Antwort4
             // 
-            Antwort4.Location = new Point(374, 371);
+            Antwort4.Anchor = AnchorStyles.Bottom;
+            Antwort4.Location = new Point(337, 330);
             Antwort4.Name = "Antwort4";
-            Antwort4.Size = new Size(144, 44);
+            Antwort4.Size = new Size(185, 51);
             Antwort4.TabIndex = 3;
             Antwort4.Text = "button4";
             Antwort4.UseVisualStyleBackColor = true;
@@ -90,124 +95,157 @@
             // 
             // frage
             // 
+            frage.Anchor = AnchorStyles.None;
             frage.AutoSize = true;
-            frage.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            frage.Location = new Point(75, 159);
+            frage.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            frage.Location = new Point(79, 124);
             frage.MaximumSize = new Size(500, 80);
             frage.Name = "frage";
-            frage.Size = new Size(0, 21);
+            frage.Size = new Size(0, 32);
             frage.TabIndex = 4;
             // 
             // Stufe1
             // 
+            Stufe1.Anchor = AnchorStyles.Right;
             Stufe1.AutoCheck = false;
-            Stufe1.Location = new Point(626, 400);
+            Stufe1.BackColor = Color.Transparent;
+            Stufe1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Stufe1.ForeColor = Color.Azure;
+            Stufe1.Location = new Point(548, 365);
             Stufe1.Name = "Stufe1";
-            Stufe1.Size = new Size(48, 18);
+            Stufe1.Size = new Size(131, 26);
             Stufe1.TabIndex = 5;
             Stufe1.Text = "50€";
-            Stufe1.UseVisualStyleBackColor = true;
+            Stufe1.UseVisualStyleBackColor = false;
             Stufe1.CheckedChanged += Stufe1_CheckedChanged;
             // 
             // Stufe2
             // 
+            Stufe2.Anchor = AnchorStyles.Right;
             Stufe2.AutoCheck = false;
-            Stufe2.AutoSize = true;
-            Stufe2.Location = new Point(626, 357);
+            Stufe2.BackColor = Color.Transparent;
+            Stufe2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Stufe2.ForeColor = Color.Azure;
+            Stufe2.Location = new Point(548, 330);
             Stufe2.Name = "Stufe2";
-            Stufe2.Size = new Size(50, 19);
+            Stufe2.Size = new Size(131, 29);
             Stufe2.TabIndex = 6;
             Stufe2.Text = "100€";
-            Stufe2.UseVisualStyleBackColor = true;
+            Stufe2.UseVisualStyleBackColor = false;
+            Stufe2.CheckedChanged += Stufe2_CheckedChanged;
             // 
             // Stufe4
             // 
+            Stufe4.Anchor = AnchorStyles.Right;
             Stufe4.AutoCheck = false;
-            Stufe4.AutoSize = true;
-            Stufe4.Location = new Point(626, 272);
+            Stufe4.BackColor = Color.Transparent;
+            Stufe4.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Stufe4.ForeColor = Color.Azure;
+            Stufe4.Location = new Point(548, 253);
             Stufe4.Name = "Stufe4";
-            Stufe4.Size = new Size(56, 19);
+            Stufe4.Size = new Size(131, 29);
             Stufe4.TabIndex = 8;
             Stufe4.Text = "1000€";
-            Stufe4.UseVisualStyleBackColor = true;
+            Stufe4.UseVisualStyleBackColor = false;
             // 
             // Stufe3
             // 
+            Stufe3.Anchor = AnchorStyles.Right;
             Stufe3.AutoCheck = false;
-            Stufe3.AutoSize = true;
-            Stufe3.Location = new Point(626, 313);
+            Stufe3.BackColor = Color.Transparent;
+            Stufe3.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Stufe3.ForeColor = Color.Azure;
+            Stufe3.Location = new Point(548, 288);
             Stufe3.Name = "Stufe3";
-            Stufe3.Size = new Size(50, 19);
+            Stufe3.Size = new Size(131, 29);
             Stufe3.TabIndex = 7;
             Stufe3.Text = "500€";
-            Stufe3.UseVisualStyleBackColor = true;
+            Stufe3.UseVisualStyleBackColor = false;
             // 
             // Stufe6
             // 
+            Stufe6.Anchor = AnchorStyles.Right;
             Stufe6.AutoCheck = false;
-            Stufe6.AutoSize = true;
-            Stufe6.Location = new Point(626, 190);
+            Stufe6.BackColor = Color.Transparent;
+            Stufe6.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Stufe6.ForeColor = Color.Azure;
+            Stufe6.Location = new Point(548, 180);
             Stufe6.Name = "Stufe6";
-            Stufe6.Size = new Size(65, 19);
+            Stufe6.Size = new Size(131, 29);
             Stufe6.TabIndex = 10;
             Stufe6.Text = "10.000€";
-            Stufe6.UseVisualStyleBackColor = true;
+            Stufe6.UseVisualStyleBackColor = false;
             // 
             // Stufe5
             // 
+            Stufe5.Anchor = AnchorStyles.Right;
             Stufe5.AutoCheck = false;
-            Stufe5.AutoSize = true;
-            Stufe5.Location = new Point(626, 229);
+            Stufe5.BackColor = Color.Transparent;
+            Stufe5.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Stufe5.ForeColor = Color.Azure;
+            Stufe5.Location = new Point(547, 215);
             Stufe5.Name = "Stufe5";
-            Stufe5.Size = new Size(56, 19);
+            Stufe5.Size = new Size(132, 29);
             Stufe5.TabIndex = 9;
             Stufe5.Text = "5000€";
-            Stufe5.UseVisualStyleBackColor = true;
+            Stufe5.UseVisualStyleBackColor = false;
             // 
             // Stufe8
             // 
+            Stufe8.Anchor = AnchorStyles.Right;
             Stufe8.AutoCheck = false;
-            Stufe8.AutoSize = true;
-            Stufe8.Location = new Point(626, 112);
+            Stufe8.BackColor = Color.Transparent;
+            Stufe8.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Stufe8.ForeColor = Color.Azure;
+            Stufe8.Location = new Point(548, 110);
             Stufe8.Name = "Stufe8";
-            Stufe8.Size = new Size(71, 19);
+            Stufe8.Size = new Size(131, 29);
             Stufe8.TabIndex = 12;
             Stufe8.Text = "100.000€";
-            Stufe8.UseVisualStyleBackColor = true;
+            Stufe8.UseVisualStyleBackColor = false;
+            Stufe8.CheckedChanged += Stufe8_CheckedChanged;
             // 
             // Stufe7
             // 
+            Stufe7.Anchor = AnchorStyles.Right;
             Stufe7.AutoCheck = false;
-            Stufe7.AutoSize = true;
-            Stufe7.Location = new Point(626, 151);
+            Stufe7.BackColor = Color.Transparent;
+            Stufe7.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Stufe7.ForeColor = Color.Azure;
+            Stufe7.Location = new Point(548, 145);
             Stufe7.Name = "Stufe7";
-            Stufe7.Size = new Size(65, 19);
+            Stufe7.Size = new Size(131, 29);
             Stufe7.TabIndex = 11;
             Stufe7.Text = "50.000€";
-            Stufe7.UseVisualStyleBackColor = true;
+            Stufe7.UseVisualStyleBackColor = false;
             // 
             // Stufe10
             // 
+            Stufe10.Anchor = AnchorStyles.Right;
             Stufe10.AutoCheck = false;
-            Stufe10.AutoSize = true;
-            Stufe10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Stufe10.Location = new Point(626, 29);
+            Stufe10.BackColor = Color.Transparent;
+            Stufe10.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Stufe10.ForeColor = Color.Azure;
+            Stufe10.Location = new Point(547, 31);
             Stufe10.Name = "Stufe10";
-            Stufe10.Size = new Size(88, 19);
+            Stufe10.Size = new Size(132, 29);
             Stufe10.TabIndex = 14;
             Stufe10.Text = "1.000.000€";
-            Stufe10.UseVisualStyleBackColor = true;
+            Stufe10.UseVisualStyleBackColor = false;
             // 
             // Stufe9
             // 
+            Stufe9.Anchor = AnchorStyles.Right;
             Stufe9.AutoCheck = false;
-            Stufe9.AutoSize = true;
-            Stufe9.Location = new Point(626, 68);
+            Stufe9.BackColor = Color.Transparent;
+            Stufe9.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Stufe9.ForeColor = Color.Azure;
+            Stufe9.Location = new Point(548, 66);
             Stufe9.Name = "Stufe9";
-            Stufe9.Size = new Size(71, 19);
+            Stufe9.Size = new Size(131, 29);
             Stufe9.TabIndex = 13;
             Stufe9.Text = "500.000€";
-            Stufe9.UseVisualStyleBackColor = true;
+            Stufe9.UseVisualStyleBackColor = false;
             // 
             // timer1
             // 
@@ -215,11 +253,12 @@
             // 
             // button1
             // 
-            button1.Location = new Point(12, 416);
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button1.Location = new Point(10, 398);
             button1.Name = "button1";
-            button1.Size = new Size(89, 22);
+            button1.Size = new Size(135, 42);
             button1.TabIndex = 15;
-            button1.Text = "Startseite";
+            button1.Text = "Zurück zur Startseite";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -227,6 +266,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(button1);
             Controls.Add(Stufe10);
