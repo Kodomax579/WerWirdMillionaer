@@ -112,7 +112,7 @@
             DarkModeImg.TabIndex = 7;
             DarkModeImg.TabStop = false;
             DarkModeImg.Visible = false;
-            DarkModeImg.Click += DarkModeImg_Click;
+
             // 
             // Settings
             // 
