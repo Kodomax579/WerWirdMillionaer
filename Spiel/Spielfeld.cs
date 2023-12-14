@@ -164,5 +164,10 @@ namespace Spiel
         {
 
         }
+
+        private void Stufe2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
