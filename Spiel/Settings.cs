@@ -22,6 +22,7 @@ namespace Spiel
         {
             SchriftGrößeSlider.Visible = false;
             SchwierigkeitsSlider.Visible = false;
+            //fff
         }
 
         public CheckBox GetCheckBoxFromSettings()
