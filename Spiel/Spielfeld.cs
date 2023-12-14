@@ -41,10 +41,7 @@ namespace Spiel
             {
                 CorrectAnswerOnline(1);
             }
-            else
-            {
-                CorrectAnswerOffline(1);
-            }
+           
         }
 
         private void Antwort2_Click(object sender, EventArgs e)
@@ -53,10 +50,7 @@ namespace Spiel
             {
                 CorrectAnswerOnline(2);
             }
-            else
-            {
-                CorrectAnswerOffline(2);
-            }
+            
         }
 
         private void Antwort3_Click(object sender, EventArgs e)
@@ -65,10 +59,7 @@ namespace Spiel
             {
                 CorrectAnswerOnline(3);
             }
-            else
-            {
-                CorrectAnswerOffline(3);
-            }
+           
         }
 
         private void Antwort4_Click(object sender, EventArgs e)
@@ -77,10 +68,7 @@ namespace Spiel
             {
                 CorrectAnswerOnline(4);
             }
-            else
-            {
-                CorrectAnswerOffline(4);
-            }
+           
         }
 
         private void Stufe1_CheckedChanged(object sender, EventArgs e)
@@ -132,34 +120,7 @@ namespace Spiel
 
         }
 
-        private async void CorrectAnswerOffline(int ButtonNumber)
-        {
-            bool isAnswerCorrect = await controller.AntwortOffline(ButtonNumber, Antwort1, Antwort2, Antwort3, Antwort4);
-
-            if (isAnswerCorrect)
-            {
-                if (!controller.gewonnenOffline())
-                {
-                    controller.GetFrageOffline(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1, Stufe2, Stufe3, Stufe4, Stufe5, Stufe6, Stufe7, Stufe8, Stufe9, Stufe10);
-                }
-                else
-                {
-                    sw.Stop();
-
-                    MessageBox.Show("You Won", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Startseite.Show();
-                    this.Close();
-                }
-            }
-            else
-            {
-                sw.Stop();
-                MessageBox.Show("You Lose", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Startseite.Show();
-                this.Close();
-            }
-        }
-
+       
         private void Stufe8_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -168,6 +129,26 @@ namespace Spiel
         private void Stufe2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Stufe9_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Stufe5_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            controller.fiftyfiftyjoker(Antwort1, Antwort2, Antwort3, Antwort4);
         }
     }
 }

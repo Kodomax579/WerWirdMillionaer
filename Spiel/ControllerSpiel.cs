@@ -17,8 +17,6 @@ namespace Spiel
         int ID;
         int RichtigeAntwort; 
         int Zaehler =0;
-        
-       
 
         public void GetFrage(Label frage, Button antwort1, Button antwort2, Button antwort3, Button antwort4, CheckBox stufe1, CheckBox stufe2, CheckBox stufe3, CheckBox stufe4, CheckBox stufe5, CheckBox stufe6, CheckBox stufe7, CheckBox stufe8, CheckBox stufe9, CheckBox stufe10)
         {
@@ -119,19 +117,33 @@ namespace Spiel
             return Time;
         }
 
-        internal Task<bool> AntwortOffline(int buttonNumber, Button antwort1, Button antwort2, Button antwort3, Button antwort4)
+        public void fiftyfiftyjoker(Button antwort1, Button antwort2, Button antwort3, Button antwort4)
         {
-            throw new NotImplementedException();
-        }
+            Random random = new Random();
+            int ran;
+            int speicher = 0;
 
-        internal bool gewonnenOffline()
-        {
-            throw new NotImplementedException();
-        }
+            for(int i = 0; i < 1; i++)
+            {
+                do
+                {
+                    ran = random.Next(1, 4);
 
-        internal void GetFrageOffline(Label frage, Button antwort1, Button antwort2, Button antwort3, Button antwort4, CheckBox stufe1, CheckBox stufe2, CheckBox stufe3, CheckBox stufe4, CheckBox stufe5, CheckBox stufe6, CheckBox stufe7, CheckBox stufe8, CheckBox stufe9, CheckBox stufe10)
-        {
-            throw new NotImplementedException();
+                } while (ran == RichtigeAntwort && ran != speicher);
+                switch(ran)
+                {
+                    case 1:
+                        antwort1.Enabled = false; speicher = ran; break;
+                    case 2:
+                        antwort2.Enabled = false; speicher = ran; break;
+                    case 3:
+                        antwort3.Enabled = false; speicher = ran; break;
+                    case 4:
+                        antwort4.Enabled = false; speicher = ran; break;
+                }
+            }
+
         }
+        
     }
 }
