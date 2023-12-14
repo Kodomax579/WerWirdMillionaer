@@ -87,7 +87,7 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(831, 43);
+            label2.Location = new Point(420, 129);
             label2.Name = "label2";
             label2.Size = new Size(78, 32);
             label2.TabIndex = 5;
