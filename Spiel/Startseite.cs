@@ -46,6 +46,7 @@ namespace Spiel
         }
         private void Startseite_Load(object sender, EventArgs e)
         {
+            
             this.WindowState = FormWindowState.Maximized;
             ControllerRangliste controllerRangliste = new ControllerRangliste();
             controllerRangliste.getranking(listBox1);
