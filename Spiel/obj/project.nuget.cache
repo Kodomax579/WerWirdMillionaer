@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FIhpMLZT/YZ6d4ki4urXFVsIc94IrwGOghd4jUR/EJg57nMiuSrT57w0mpS8OwQd/+OL/vlTbz1LQgu+z7+fgQ==",
+  "dgSpecHash": "bCKmZG8Wg/+5M8c4XfFRhePRXNQFAk0thGMgYeGMrSRBzl9J4UheJngw8K4uyf/vuTUBC4dH9WvwuQgLPHKN0w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer\\Spiel\\Spiel.csproj",
+  "projectFilePath": "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer3\\Spiel\\Spiel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\engel\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\engel\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",

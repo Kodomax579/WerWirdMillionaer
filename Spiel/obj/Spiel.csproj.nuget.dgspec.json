@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer\\Spiel\\Spiel.csproj": {}
+    "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer3\\Spiel\\Spiel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer\\Spiel\\Spiel.csproj": {
+    "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer3\\Spiel\\Spiel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer\\Spiel\\Spiel.csproj",
+        "projectUniqueName": "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer3\\Spiel\\Spiel.csproj",
         "projectName": "Spiel",
-        "projectPath": "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer\\Spiel\\Spiel.csproj",
+        "projectPath": "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer3\\Spiel\\Spiel.csproj",
         "packagesPath": "C:\\Users\\engel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer\\Spiel\\obj\\",
+        "outputPath": "C:\\Users\\engel\\source\\repos\\Kodomax579\\WerWirdMillionaer3\\Spiel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
