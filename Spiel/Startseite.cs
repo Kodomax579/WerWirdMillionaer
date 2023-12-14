@@ -46,10 +46,12 @@ namespace Spiel
         }
         private void Startseite_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             ControllerRangliste controllerRangliste = new ControllerRangliste();
             controllerRangliste.getranking(listBox1);
             Platz = controllerRangliste.getOwnrank(ID);
-           
+           this.AutoSize = true;
+
         }
 
         private void label2_Click(object sender, EventArgs e)

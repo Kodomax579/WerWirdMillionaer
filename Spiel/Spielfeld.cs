@@ -19,7 +19,7 @@ namespace Spiel
         Stopwatch sw = new Stopwatch();
         ControllerSpiel controller = new ControllerSpiel();
         Startseite Startseite;
-        
+
 
         public Spielfeld(int SpielerID)
         {
@@ -30,18 +30,19 @@ namespace Spiel
 
         private void Spielfeld_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             sw.Start();
             controller.GetFrage(frage, Antwort1, Antwort2, Antwort3, Antwort4, Stufe1, Stufe2, Stufe3, Stufe4, Stufe5, Stufe6, Stufe7, Stufe8, Stufe9, Stufe10);
         }
 
         private void Antwort1_Click(object sender, EventArgs e)
         {
-            if(id> -1)
+            if (id > -1)
             {
                 CorrectAnswerOnline(1);
             }
             else
-            { 
+            {
                 CorrectAnswerOffline(1);
             }
         }
@@ -93,7 +94,7 @@ namespace Spiel
             Startseite.GetandSetScore(controller.InsertRanked(id, time));
 
             Startseite.Show();
-                this.Close();
+            this.Close();
         }
 
         private async void CorrectAnswerOnline(int ButtonNumber)
@@ -128,7 +129,7 @@ namespace Spiel
                 Startseite.Show();
                 this.Close();
             }
-           
+
         }
 
         private async void CorrectAnswerOffline(int ButtonNumber)
@@ -157,6 +158,11 @@ namespace Spiel
                 Startseite.Show();
                 this.Close();
             }
+        }
+
+        private void Stufe8_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

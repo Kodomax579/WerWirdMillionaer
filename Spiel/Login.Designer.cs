@@ -40,21 +40,23 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(360, 49);
+            label1.Location = new Point(400, 67);
             label1.Name = "label1";
-            label1.Size = new Size(206, 30);
+            label1.Size = new Size(263, 38);
             label1.TabIndex = 2;
             label1.Text = "Wer wird Millionär";
+            label1.AutoSizeChanged += label1_AutoSizeChanged;
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.None;
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(410, 392);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(487, 499);
             button2.Name = "button2";
-            button2.Size = new Size(108, 31);
+            button2.Size = new Size(167, 65);
             button2.TabIndex = 3;
             button2.Text = "Einloggen";
             button2.UseVisualStyleBackColor = true;
@@ -62,49 +64,53 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(211, 151);
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(230, 203);
             label2.Name = "label2";
-            label2.Size = new Size(107, 20);
+            label2.Size = new Size(216, 41);
             label2.TabIndex = 4;
             label2.Text = "Benutzername:";
             // 
             // username
             // 
-            username.Location = new Point(526, 152);
-            username.Margin = new Padding(3, 2, 3, 2);
+            username.Anchor = AnchorStyles.None;
+            username.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            username.Location = new Point(590, 205);
             username.Name = "username";
-            username.Size = new Size(248, 23);
+            username.Size = new Size(331, 47);
             username.TabIndex = 5;
             // 
             // password
             // 
-            password.Location = new Point(526, 218);
-            password.Margin = new Padding(3, 2, 3, 2);
+            password.Anchor = AnchorStyles.None;
+            password.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            password.Location = new Point(590, 293);
             password.Name = "password";
-            password.Size = new Size(248, 23);
+            password.Size = new Size(331, 47);
             password.TabIndex = 6;
             password.UseSystemPasswordChar = true;
             password.TextChanged += password_TextChanged;
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(211, 219);
+            label3.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(230, 294);
             label3.Name = "label3";
-            label3.Size = new Size(69, 20);
+            label3.Size = new Size(142, 41);
             label3.TabIndex = 7;
             label3.Text = "Passwort:";
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.None;
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(734, 392);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(868, 499);
             button3.Name = "button3";
-            button3.Size = new Size(130, 31);
+            button3.Size = new Size(182, 65);
             button3.TabIndex = 8;
             button3.Text = "Regristrieren";
             button3.UseVisualStyleBackColor = true;
@@ -112,9 +118,11 @@
             // 
             // button1
             // 
-            button1.Location = new Point(32, 392);
+            button1.Anchor = AnchorStyles.None;
+            button1.Location = new Point(99, 499);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(120, 31);
+            button1.Size = new Size(188, 65);
             button1.TabIndex = 9;
             button1.Text = "Als Gast Spielen";
             button1.UseVisualStyleBackColor = true;
@@ -122,9 +130,9 @@
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(961, 464);
+            ClientSize = new Size(1087, 619);
             Controls.Add(button1);
             Controls.Add(button3);
             Controls.Add(label3);
@@ -133,6 +141,7 @@
             Controls.Add(label2);
             Controls.Add(button2);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Login";
             Text = "Form1";
             Load += Form1_Load_1;

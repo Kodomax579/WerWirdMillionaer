@@ -19,7 +19,7 @@ namespace Spiel
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -58,6 +58,11 @@ namespace Spiel
             Startseite set = new Startseite(0);
             this.Hide();
             set.Show();
+        }
+
+        private void label1_AutoSizeChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

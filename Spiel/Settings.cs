@@ -18,6 +18,7 @@ namespace Spiel
         public bool SchwierigkeitsSliderVisibility;
         private void Settings_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             SchriftGrößeSlider.Visible = false;
             SchwierigkeitsSlider.Visible = false;
         }
