@@ -24,7 +24,7 @@ namespace Spiel
             label3.BackColor = Color.Transparent;
 
             this.WindowState = FormWindowState.Maximized;
-            
+
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -67,7 +67,7 @@ namespace Spiel
 
         private void label1_AutoSizeChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

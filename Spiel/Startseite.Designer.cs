@@ -55,37 +55,52 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom;
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = SystemColors.Control;
             button1.Location = new Point(352, 244);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(192, 40);
             button1.TabIndex = 1;
             button1.Text = "Neues Spiel";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Bottom;
+            button2.BackColor = Color.Transparent;
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = SystemColors.Control;
             button2.Location = new Point(352, 308);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(192, 43);
             button2.TabIndex = 2;
             button2.Text = "Optionen";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // button4
             // 
             button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button4.BackColor = Color.Transparent;
+            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
+            button4.BackgroundImageLayout = ImageLayout.Stretch;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = SystemColors.Control;
             button4.Location = new Point(88, 308);
             button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
             button4.Size = new Size(189, 43);
             button4.TabIndex = 4;
             button4.Text = "Ausloggen";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
             // label2
@@ -137,6 +152,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
+            DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "Startseite";
             Text = "Startseite";

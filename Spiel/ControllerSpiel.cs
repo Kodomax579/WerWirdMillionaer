@@ -117,33 +117,42 @@ namespace Spiel
             return Time;
         }
 
-        public void fiftyfiftyjoker(Button antwort1, Button antwort2, Button antwort3, Button antwort4)
+        public void FiftyFiftyJoker(Button antwort1, Button antwort2, Button antwort3, Button antwort4)
         {
             Random random = new Random();
             int ran;
             int speicher = 0;
 
-            for(int i = 0; i < 1; i++)
+            for (int i = 0; i < 2; i++)
             {
                 do
                 {
-                    ran = random.Next(1, 4);
+                    ran = random.Next(1, 5);
 
                 } while (ran == RichtigeAntwort && ran != speicher);
-                switch(ran)
+
+                switch (ran)
                 {
                     case 1:
-                        antwort1.Enabled = false; speicher = ran; break;
+                        antwort1.Enabled = false;
+                        speicher = ran;
+                        break;
                     case 2:
-                        antwort2.Enabled = false; speicher = ran; break;
+                        antwort2.Enabled = false;
+                        speicher = ran;
+                        break;
                     case 3:
-                        antwort3.Enabled = false; speicher = ran; break;
+                        antwort3.Enabled = false;
+                        speicher = ran;
+                        break;
                     case 4:
-                        antwort4.Enabled = false; speicher = ran; break;
+                        antwort4.Enabled = false;
+                        speicher = ran;
+                        break;
                 }
             }
-
         }
-        
+
+
     }
 }

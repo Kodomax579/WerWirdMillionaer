@@ -40,8 +40,12 @@ namespace Spiel
             if (id > -1)
             {
                 CorrectAnswerOnline(1);
+                Antwort1.Enabled = true;
+                Antwort2.Enabled = true;
+                Antwort3.Enabled = true;
+                Antwort4.Enabled = true;
             }
-           
+
         }
 
         private void Antwort2_Click(object sender, EventArgs e)
@@ -49,8 +53,12 @@ namespace Spiel
             if (id > -1)
             {
                 CorrectAnswerOnline(2);
+                Antwort1.Enabled = true;
+                Antwort2.Enabled = true;
+                Antwort3.Enabled = true;
+                Antwort4.Enabled = true;
             }
-            
+
         }
 
         private void Antwort3_Click(object sender, EventArgs e)
@@ -58,8 +66,12 @@ namespace Spiel
             if (id > -1)
             {
                 CorrectAnswerOnline(3);
+                Antwort1.Enabled = true;
+                Antwort2.Enabled = true;
+                Antwort3.Enabled = true;
+                Antwort4.Enabled = true;
             }
-           
+
         }
 
         private void Antwort4_Click(object sender, EventArgs e)
@@ -67,8 +79,12 @@ namespace Spiel
             if (id > -1)
             {
                 CorrectAnswerOnline(4);
+                Antwort1.Enabled = true;
+                Antwort2.Enabled = true;
+                Antwort3.Enabled = true;
+                Antwort4.Enabled = true;
             }
-           
+
         }
 
         private void Stufe1_CheckedChanged(object sender, EventArgs e)
@@ -120,7 +136,7 @@ namespace Spiel
 
         }
 
-       
+
         private void Stufe8_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -148,7 +164,12 @@ namespace Spiel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            controller.fiftyfiftyjoker(Antwort1, Antwort2, Antwort3, Antwort4);
+            controller.FiftyFiftyJoker(Antwort1, Antwort2, Antwort3, Antwort4);
+        }
+
+        private void Stufe3_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
