@@ -12,21 +12,26 @@ namespace Spiel
 {
     public partial class Startseite : Form
     {
-        int ID;
+        public string AktuellerScore = "Kein Score";
+        int ID, Platz;
         public Startseite(int SpielerID)
         {
             ID = SpielerID;
             InitializeComponent();
-            if(ID == -1 )
-            {
-                button3.Enabled = false;
-            }
+            label2.Text = AktuellerScore;
             
+
         }
-        public Startseite()
+        public Startseite(int SpielerID, string aktuellerscore)
         {
+            ID = SpielerID;
             InitializeComponent();
+            AktuellerScore = aktuellerscore;
+            label2.Text = AktuellerScore;
+            
+
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -41,7 +46,10 @@ namespace Spiel
         }
         private void Startseite_Load(object sender, EventArgs e)
         {
-
+            ControllerRangliste controllerRangliste = new ControllerRangliste();
+            controllerRangliste.getranking(listBox1);
+            Platz = controllerRangliste.getOwnrank(ID);
+           
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -51,16 +59,14 @@ namespace Spiel
 
         private void button1_Click(object sender, EventArgs e)
         {
-                Spielfeld spiel = new Spielfeld(ID);
-                this.Close();
-                spiel.Show();
+            Spielfeld spiel = new Spielfeld(ID);
+            this.Close();
+            spiel.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-                Rangliste ra = new Rangliste(ID);
-                this.Close();
-                ra.Show();   
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -73,6 +79,20 @@ namespace Spiel
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+        public void GetandSetScore(string score)
+        {
+            AktuellerScore = score;
+            label2.Text = AktuellerScore;
+        }
+
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null)
+            {
+                MessageBox.Show(listBox1.SelectedItem.ToString(), "Highscore From:");
+            }
         }
     }
 }

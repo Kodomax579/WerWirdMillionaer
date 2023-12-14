@@ -72,9 +72,8 @@ namespace Spiel
                 btn.BackColor = Color.Red;
             }
              answerButtons[RichtigeAntwort - 1].BackColor = Color.Green;
-            
 
-            await Task.Delay(3000);
+            await Task.Delay(2000);
 
             foreach (Button btn in answerButtons)
             {
@@ -97,13 +96,27 @@ namespace Spiel
                 return true;
             }
         }
-        public bool InsertRanked(int SpielerID, int time)
+        public string InsertRanked(int SpielerID, int timer)
         {
-           if(mysql.AlreadyHighscore(SpielerID,Zaehler,time))
+            String Time;
+            double time = timer;
+            if (SpielerID != 0)
             {
-                return true;
+                if (mysql.AlreadyHighscore(SpielerID, Zaehler, timer))
+                {
+
+                    time = time / 1000;
+                    Time = time.ToString();
+                    Time = Time.Remove(Time.Length - 1);
+                    Time = "Score\nStufe: " + Zaehler + "\nZeit: " + Time;
+                    return Time;
+                }
             }
-           return false;
+            time = time / 1000;
+            Time = time.ToString();
+            Time = Time.Remove(Time.Length - 1);
+            Time = "Score\nStufe: " + Zaehler + "\nZeit: " + Time;
+            return Time;
         }
 
         internal Task<bool> AntwortOffline(int buttonNumber, Button antwort1, Button antwort2, Button antwort3, Button antwort4)
