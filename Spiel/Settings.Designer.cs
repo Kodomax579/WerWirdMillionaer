@@ -29,126 +29,137 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
-            this.SchriftGrößeButton = new System.Windows.Forms.Button();
-            this.SchriftGrößeSlider = new System.Windows.Forms.TrackBar();
-            this.SchwierigkeitsSlider = new System.Windows.Forms.TrackBar();
-            this.SchwierigkeitsButton = new System.Windows.Forms.Button();
-            this.DarkModeButton = new System.Windows.Forms.Button();
-            this.LightModeImg = new System.Windows.Forms.PictureBox();
-            this.DarkModeImg = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.ZuruckZurStartseite = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.SchriftGrößeSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchwierigkeitsSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LightModeImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DarkModeImg)).BeginInit();
-            this.SuspendLayout();
+            SchriftGrößeButton = new Button();
+            SchriftGrößeSlider = new TrackBar();
+            SchwierigkeitsSlider = new TrackBar();
+            SchwierigkeitsButton = new Button();
+            DarkModeButton = new Button();
+            LightModeImg = new PictureBox();
+            DarkModeImg = new PictureBox();
+            checkBox1 = new CheckBox();
+            ZuruckZurStartseite = new Button();
+            ((System.ComponentModel.ISupportInitialize)SchriftGrößeSlider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SchwierigkeitsSlider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LightModeImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DarkModeImg).BeginInit();
+            SuspendLayout();
             // 
             // SchriftGrößeButton
             // 
-            this.SchriftGrößeButton.Location = new System.Drawing.Point(98, 37);
-            this.SchriftGrößeButton.Name = "SchriftGrößeButton";
-            this.SchriftGrößeButton.Size = new System.Drawing.Size(94, 56);
-            this.SchriftGrößeButton.TabIndex = 0;
-            this.SchriftGrößeButton.Text = "button1";
-            this.SchriftGrößeButton.UseVisualStyleBackColor = true;
+            SchriftGrößeButton.Location = new Point(86, 28);
+            SchriftGrößeButton.Margin = new Padding(3, 2, 3, 2);
+            SchriftGrößeButton.Name = "SchriftGrößeButton";
+            SchriftGrößeButton.Size = new Size(82, 42);
+            SchriftGrößeButton.TabIndex = 0;
+            SchriftGrößeButton.Text = "button1";
+            SchriftGrößeButton.UseVisualStyleBackColor = true;
             // 
             // SchriftGrößeSlider
             // 
-            this.SchriftGrößeSlider.Location = new System.Drawing.Point(170, 37);
-            this.SchriftGrößeSlider.Name = "SchriftGrößeSlider";
-            this.SchriftGrößeSlider.Size = new System.Drawing.Size(200, 56);
-            this.SchriftGrößeSlider.TabIndex = 1;
+            SchriftGrößeSlider.Location = new Point(149, 28);
+            SchriftGrößeSlider.Margin = new Padding(3, 2, 3, 2);
+            SchriftGrößeSlider.Name = "SchriftGrößeSlider";
+            SchriftGrößeSlider.Size = new Size(175, 45);
+            SchriftGrößeSlider.TabIndex = 1;
             // 
             // SchwierigkeitsSlider
             // 
-            this.SchwierigkeitsSlider.Location = new System.Drawing.Point(170, 133);
-            this.SchwierigkeitsSlider.Name = "SchwierigkeitsSlider";
-            this.SchwierigkeitsSlider.Size = new System.Drawing.Size(200, 56);
-            this.SchwierigkeitsSlider.TabIndex = 3;
+            SchwierigkeitsSlider.Location = new Point(149, 100);
+            SchwierigkeitsSlider.Margin = new Padding(3, 2, 3, 2);
+            SchwierigkeitsSlider.Name = "SchwierigkeitsSlider";
+            SchwierigkeitsSlider.Size = new Size(175, 45);
+            SchwierigkeitsSlider.TabIndex = 3;
             // 
             // SchwierigkeitsButton
             // 
-            this.SchwierigkeitsButton.Location = new System.Drawing.Point(98, 133);
-            this.SchwierigkeitsButton.Name = "SchwierigkeitsButton";
-            this.SchwierigkeitsButton.Size = new System.Drawing.Size(94, 56);
-            this.SchwierigkeitsButton.TabIndex = 2;
-            this.SchwierigkeitsButton.Text = "button1";
-            this.SchwierigkeitsButton.UseVisualStyleBackColor = true;
+            SchwierigkeitsButton.Location = new Point(86, 100);
+            SchwierigkeitsButton.Margin = new Padding(3, 2, 3, 2);
+            SchwierigkeitsButton.Name = "SchwierigkeitsButton";
+            SchwierigkeitsButton.Size = new Size(82, 42);
+            SchwierigkeitsButton.TabIndex = 2;
+            SchwierigkeitsButton.Text = "button1";
+            SchwierigkeitsButton.UseVisualStyleBackColor = true;
             // 
             // DarkModeButton
             // 
-            this.DarkModeButton.Location = new System.Drawing.Point(98, 233);
-            this.DarkModeButton.Name = "DarkModeButton";
-            this.DarkModeButton.Size = new System.Drawing.Size(94, 56);
-            this.DarkModeButton.TabIndex = 4;
-            this.DarkModeButton.Text = "button1";
-            this.DarkModeButton.UseVisualStyleBackColor = true;
+            DarkModeButton.Location = new Point(86, 175);
+            DarkModeButton.Margin = new Padding(3, 2, 3, 2);
+            DarkModeButton.Name = "DarkModeButton";
+            DarkModeButton.Size = new Size(82, 42);
+            DarkModeButton.TabIndex = 4;
+            DarkModeButton.Text = "button1";
+            DarkModeButton.UseVisualStyleBackColor = true;
             // 
             // LightModeImg
             // 
-            this.LightModeImg.Image = ((System.Drawing.Image)(resources.GetObject("LightModeImg.Image")));
-            this.LightModeImg.Location = new System.Drawing.Point(227, 233);
-            this.LightModeImg.Name = "LightModeImg";
-            this.LightModeImg.Size = new System.Drawing.Size(56, 56);
-            this.LightModeImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LightModeImg.TabIndex = 5;
-            this.LightModeImg.TabStop = false;
+            LightModeImg.Image = (Image)resources.GetObject("LightModeImg.Image");
+            LightModeImg.Location = new Point(199, 175);
+            LightModeImg.Margin = new Padding(3, 2, 3, 2);
+            LightModeImg.Name = "LightModeImg";
+            LightModeImg.Size = new Size(49, 42);
+            LightModeImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            LightModeImg.TabIndex = 5;
+            LightModeImg.TabStop = false;
             // 
             // DarkModeImg
             // 
-            this.DarkModeImg.Image = global::Spiel.Properties.Resources.moon;
-            this.DarkModeImg.Location = new System.Drawing.Point(314, 233);
-            this.DarkModeImg.Name = "DarkModeImg";
-            this.DarkModeImg.Size = new System.Drawing.Size(56, 56);
-            this.DarkModeImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.DarkModeImg.TabIndex = 7;
-            this.DarkModeImg.TabStop = false;
-            this.DarkModeImg.Visible = false;
+            DarkModeImg.Image = Properties.Resources.moon;
+            DarkModeImg.Location = new Point(275, 175);
+            DarkModeImg.Margin = new Padding(3, 2, 3, 2);
+            DarkModeImg.Name = "DarkModeImg";
+            DarkModeImg.Size = new Size(49, 42);
+            DarkModeImg.SizeMode = PictureBoxSizeMode.StretchImage;
+            DarkModeImg.TabIndex = 7;
+            DarkModeImg.TabStop = false;
+            DarkModeImg.Visible = false;
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(98, 338);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 24);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(86, 254);
+            checkBox1.Margin = new Padding(3, 2, 3, 2);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(83, 19);
+            checkBox1.TabIndex = 8;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // ZuruckZurStartseite
             // 
-            this.ZuruckZurStartseite.Location = new System.Drawing.Point(98, 421);
-            this.ZuruckZurStartseite.Name = "ZuruckZurStartseite";
-            this.ZuruckZurStartseite.Size = new System.Drawing.Size(129, 52);
-            this.ZuruckZurStartseite.TabIndex = 9;
-            this.ZuruckZurStartseite.Text = "´Zurück zur Startseite";
-            this.ZuruckZurStartseite.UseVisualStyleBackColor = true;
-            this.ZuruckZurStartseite.Click += new System.EventHandler(this.ZuruckZurStartseite_Click);
+            ZuruckZurStartseite.Location = new Point(86, 316);
+            ZuruckZurStartseite.Margin = new Padding(3, 2, 3, 2);
+            ZuruckZurStartseite.Name = "ZuruckZurStartseite";
+            ZuruckZurStartseite.Size = new Size(113, 39);
+            ZuruckZurStartseite.TabIndex = 9;
+            ZuruckZurStartseite.Text = "´Zurück zur Startseite";
+            ZuruckZurStartseite.UseVisualStyleBackColor = true;
+            ZuruckZurStartseite.Click += ZuruckZurStartseite_Click;
             // 
             // Settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 571);
-            this.Controls.Add(this.ZuruckZurStartseite);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.DarkModeImg);
-            this.Controls.Add(this.LightModeImg);
-            this.Controls.Add(this.DarkModeButton);
-            this.Controls.Add(this.SchwierigkeitsSlider);
-            this.Controls.Add(this.SchwierigkeitsButton);
-            this.Controls.Add(this.SchriftGrößeSlider);
-            this.Controls.Add(this.SchriftGrößeButton);
-            this.Name = "Settings";
-            this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.SchriftGrößeSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchwierigkeitsSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LightModeImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DarkModeImg)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1090, 428);
+            Controls.Add(ZuruckZurStartseite);
+            Controls.Add(checkBox1);
+            Controls.Add(DarkModeImg);
+            Controls.Add(LightModeImg);
+            Controls.Add(DarkModeButton);
+            Controls.Add(SchwierigkeitsSlider);
+            Controls.Add(SchwierigkeitsButton);
+            Controls.Add(SchriftGrößeSlider);
+            Controls.Add(SchriftGrößeButton);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "Settings";
+            Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)SchriftGrößeSlider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SchwierigkeitsSlider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LightModeImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DarkModeImg).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
