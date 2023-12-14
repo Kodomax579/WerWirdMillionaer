@@ -29,120 +29,116 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Startseite));
-            label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button4 = new Button();
-            label2 = new Label();
-            listBox1 = new ListBox();
-            label3 = new Label();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top;
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(357, 11);
-            label1.Name = "label1";
-            label1.Size = new Size(209, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Wer wird Millionär";
-            label1.Click += label1_Click;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(408, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(259, 41);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Wer wird Millionär";
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.Bottom;
-            button1.Location = new Point(352, 244);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(192, 40);
-            button1.TabIndex = 1;
-            button1.Text = "Neues Spiel";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Location = new System.Drawing.Point(402, 325);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(219, 53);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Neues Spiel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            button2.Anchor = AnchorStyles.Bottom;
-            button2.Location = new Point(352, 308);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(192, 43);
-            button2.TabIndex = 2;
-            button2.Text = "Optionen";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button2.Location = new System.Drawing.Point(402, 411);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(219, 57);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Optionen";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
-            button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            button4.Location = new Point(88, 308);
-            button4.Margin = new Padding(3, 2, 3, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(189, 43);
-            button4.TabIndex = 4;
-            button4.Text = "Ausloggen";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.Location = new System.Drawing.Point(101, 411);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(216, 57);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Ausloggen";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(760, 18);
-            label2.Name = "label2";
-            label2.Size = new Size(63, 25);
-            label2.TabIndex = 5;
-            label2.Text = "label2";
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(869, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 32);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "label2";
             // 
             // listBox1
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(56, 42);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(220, 229);
-            listBox1.TabIndex = 6;
-            listBox1.DoubleClick += listBox1_DoubleClick;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(64, 56);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(251, 304);
+            this.listBox1.TabIndex = 6;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(107, 9);
-            label3.Name = "label3";
-            label3.Size = new Size(97, 25);
-            label3.TabIndex = 7;
-            label3.Text = "Highscore";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(122, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 32);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Highscore";
             // 
             // Startseite
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(949, 455);
-            Controls.Add(label3);
-            Controls.Add(listBox1);
-            Controls.Add(label2);
-            Controls.Add(button4);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "Startseite";
-            Text = "Startseite";
-            Load += Startseite_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1085, 607);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
+            this.Name = "Startseite";
+            this.Text = "Startseite";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

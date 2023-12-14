@@ -40,7 +40,7 @@ namespace Spiel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Settings set = new Settings();
+            Settings set = new Settings(ID);
             this.Close();
             set.Show();
         }
@@ -88,6 +88,7 @@ namespace Spiel
             label2.Text = AktuellerScore;
         }
 
+        
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {

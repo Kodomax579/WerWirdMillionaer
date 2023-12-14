@@ -16,19 +16,28 @@ namespace Spiel
         private bool MouseOnS_Slider = false;
         public bool SchriftGrößeSliderVisibility;
         public bool SchwierigkeitsSliderVisibility;
+        int ID;
+
         private void Settings_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
             SchriftGrößeSlider.Visible = false;
             SchwierigkeitsSlider.Visible = false;
         }
 
-        public Settings()
+        public CheckBox GetCheckBoxFromSettings()
         {
-            InitializeComponent();
+            return checkBox1;
+        }
 
+        public Settings(int SpielerID)
+        {
+            ID = SpielerID;
+            InitializeComponent();
+            checkBox1 = new CheckBox();
         }
         private TrackBar SchriftGrößeSlider = new TrackBar();
+
+
 
         private void SchriftGrößeButton_MouseEnter(object sender, EventArgs e)
         {
@@ -153,27 +162,21 @@ namespace Spiel
             }
         }
 
-        private void DarkModeButton_Enter(object sender, EventArgs e)
+        public bool GetCheckBoxState()
         {
-
+            return checkBox1.Checked;
         }
 
-        /*private void LightModeImg_Load(object sender, EventArgs e)
+        public void SetCheckBoxState(bool newState)
         {
-            string imagePath = "path/to/your/image.png"; // Replace with the actual path to your PNG image
+            checkBox1.Checked = newState;
+        }
 
-            try
-            {
-                // Check if the file exists
-                if (System.IO.File.Exists(imagePath))
-                {
-                    // Load the image
-                    using (Bitmap bmp = new Bitmap(imagePath))
-                    {
-                        // Display the image in the PictureBox
-                        pictureBox1.Image = new Bitmap(bmp);
-                    }
-                }
-            }
+        private void ZuruckZurStartseite_Click(object sender, EventArgs e)
+        {
+            Startseite start = new Startseite(ID);
+            this.Close();
+            start.Show();
+        }
     }
 }
